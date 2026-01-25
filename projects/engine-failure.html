@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine Failure Prediction - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .project-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>Engine Failure Prediction</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Predictive Maintenance using Machine Learning
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <p>
+                        This project focuses on developing a predictive model to forecast engine failures 
+                        before they occur. By leveraging machine learning algorithms and historical maintenance 
+                        data, the model helps identify patterns that indicate potential failures, enabling 
+                        proactive maintenance and reducing downtime.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tasks"></i> Key Objectives</h2>
+                    <ul>
+                        <li>Predict engine failures with high accuracy to prevent unexpected breakdowns</li>
+                        <li>Identify key features that contribute to engine degradation</li>
+                        <li>Optimize maintenance schedules based on predictive insights</li>
+                        <li>Reduce maintenance costs and improve operational efficiency</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
+                    <p><strong>Data Collection & Preprocessing:</strong></p>
+                    <ul>
+                        <li>Collected sensor data from multiple engine components</li>
+                        <li>Cleaned and preprocessed data to handle missing values and outliers</li>
+                        <li>Performed feature engineering to create meaningful predictors</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>Model Development:</strong></p>
+                    <ul>
+                        <li>Implemented multiple algorithms: Logistic Regression, Random Forest, XGBoost</li>
+                        <li>Performed hyperparameter tuning using GridSearchCV</li>
+                        <li>Used cross-validation to ensure model robustness</li>
+                        <li>Evaluated models using accuracy, precision, recall, and F1-score</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Results & Impact</h2>
+                    <p>
+                        The final model achieved <strong>92% accuracy</strong> in predicting engine failures 
+                        up to 30 days in advance. Key performance metrics:
+                    </p>
+                    <ul>
+                        <li>Precision: 89%</li>
+                        <li>Recall: 91%</li>
+                        <li>F1-Score: 90%</li>
+                        <li>ROC-AUC: 0.94</li>
+                    </ul>
+                    <p>
+                        This predictive capability can potentially save millions in maintenance costs 
+                        and prevent critical operational disruptions.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Scikit-learn</span>
+                        <span>XGBoost</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>Jupyter Notebook</span>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Learnings</h2>
+                    <ul>
+                        <li>Importance of domain knowledge in feature engineering</li>
+                        <li>Handling imbalanced datasets in predictive maintenance scenarios</li>
+                        <li>Trade-offs between model complexity and interpretability</li>
+                        <li>Real-world challenges in deploying ML models in production</li>
+                    </ul>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/yourusername/engine-failure-prediction" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

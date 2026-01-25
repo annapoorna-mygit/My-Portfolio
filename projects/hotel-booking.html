@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Prediction - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
+        .project-header { text-align: center; margin-bottom: 50px; }
+        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-content { max-width: 900px; margin: 0 auto; }
+        .project-section { margin-bottom: 3rem; }
+        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+        .project-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-left: 2rem; }
+        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
+        .back-button:hover { gap: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>Hotel Booking Cancellation Prediction</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Machine Learning Classification Project
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <p>
+                        Developed a classification model to predict hotel booking cancellations, helping 
+                        hotels optimize their booking strategies and reduce revenue loss from cancellations. 
+                        The project involves analyzing customer behavior patterns and building predictive models.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tasks"></i> Problem Statement</h2>
+                    <p>
+                        Hotel cancellations pose a significant challenge to revenue management. This project 
+                        aims to predict which bookings are likely to be cancelled, enabling hotels to:
+                    </p>
+                    <ul>
+                        <li>Implement dynamic pricing strategies</li>
+                        <li>Optimize overbooking policies</li>
+                        <li>Improve resource allocation and staffing</li>
+                        <li>Enhance customer retention strategies</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Methodology</h2>
+                    <p><strong>Data Preprocessing:</strong></p>
+                    <ul>
+                        <li>Handled missing values and outliers in booking data</li>
+                        <li>Feature engineering: created lead time categories, seasonal features</li>
+                        <li>Encoded categorical variables (market segment, distribution channel)</li>
+                        <li>Balanced the dataset using SMOTE for minority class</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>Model Selection:</strong></p>
+                    <ul>
+                        <li>Tested Logistic Regression, Decision Trees, Random Forest, and XGBoost</li>
+                        <li>Performed hyperparameter tuning using RandomizedSearchCV</li>
+                        <li>Compared models based on precision, recall, and AUC-ROC</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Results</h2>
+                    <p>The Random Forest classifier achieved the best performance:</p>
+                    <ul>
+                        <li>Accuracy: 87%</li>
+                        <li>Precision: 85%</li>
+                        <li>Recall: 83%</li>
+                        <li>F1-Score: 84%</li>
+                        <li>AUC-ROC: 0.91</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">
+                        <strong>Key Predictors:</strong> Lead time, previous cancellations, 
+                        deposit type, and average daily rate were identified as the most important features.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>XGBoost</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>Imbalanced-learn</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/yourusername/hotel-booking-prediction" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

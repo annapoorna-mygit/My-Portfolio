@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Triage Tool (HTT) - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
+        .project-header { text-align: center; margin-bottom: 50px; }
+        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-content { max-width: 900px; margin: 0 auto; }
+        .project-section { margin-bottom: 3rem; }
+        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+        .project-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-left: 2rem; }
+        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
+        .back-button:hover { gap: 0.8rem; }
+        .highlight-box { background: var(--dark-secondary); border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>Hardware Triage Tool (HTT)</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Automated Hardware Failure Detection & Remediation @ HPE
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <p>
+                        The Hardware Triage Tool (HTT) is an automated system I developed at HPE to detect 
+                        node-level hardware failures in large-scale HPC clusters and recommend corrective actions. 
+                        The tool significantly reduces the time required for hardware diagnostics and enables 
+                        proactive maintenance strategies.
+                    </p>
+                    <div class="highlight-box">
+                        <strong>Impact:</strong> HTT automates the hardware failure detection process, reducing 
+                        manual triage time from hours to minutes and enabling faster resolution of hardware issues 
+                        in production HPC environments.
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tasks"></i> Problem Statement</h2>
+                    <p>
+                        In large-scale HPC clusters with thousands of compute nodes, hardware failures are inevitable. 
+                        The challenges included:
+                    </p>
+                    <ul>
+                        <li>Manual hardware diagnostics were time-consuming and error-prone</li>
+                        <li>Delayed failure detection led to longer system downtimes</li>
+                        <li>Lack of standardized failure detection and tracking processes</li>
+                        <li>Limited integration with ticketing systems for automated remediation workflows</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Implementation</h2>
+                    
+                    <p><strong>Automated Failure Detection:</strong></p>
+                    <ul>
+                        <li>Built detection algorithms to identify various hardware failure patterns</li>
+                        <li>Implemented diagnostic checks for CPU, memory, network, and storage components</li>
+                        <li>Used system logs and sensor data to pinpoint failure root causes</li>
+                        <li>Designed configurable rule engine using YAML for flexible failure definitions</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>Remediation Recommendations:</strong></p>
+                    <ul>
+                        <li>Developed recommendation engine to suggest corrective actions based on failure type</li>
+                        <li>Created priority classification system (Critical, High, Medium, Low)</li>
+                        <li>Generated detailed diagnostic reports for system administrators</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;"><strong>Enterprise Integration:</strong></p>
+                    <ul>
+                        <li>Integrated with HPE's enterprise ticketing systems for automated ticket creation</li>
+                        <li>Built REST API endpoints for integration with monitoring dashboards</li>
+                        <li>Implemented notification mechanisms for critical hardware failures</li>
+                        <li>Created automated workflows for failure tracking and resolution</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem;"><strong>Automation & Scripting:</strong></p>
+                    <ul>
+                        <li>Developed Python modules for failure detection logic</li>
+                        <li>Created shell scripts for system-level diagnostic commands</li>
+                        <li>Built YAML-based configuration system for easy customization</li>
+                        <li>Implemented scheduling mechanisms for periodic health checks</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Results & Impact</h2>
+                    <ul>
+                        <li><strong>90% reduction</strong> in manual triage time for hardware failures</li>
+                        <li><strong>Automated detection</strong> of 15+ different hardware failure patterns</li>
+                        <li><strong>Real-time alerting</strong> for critical hardware issues</li>
+                        <li><strong>Seamless integration</strong> with enterprise ticketing and monitoring systems</li>
+                        <li><strong>Improved MTTR</strong> (Mean Time To Resolution) for hardware incidents</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>YAML</span>
+                        <span>Shell Scripting</span>
+                        <span>REST APIs</span>
+                        <span>Automation</span>
+                        <span>System Diagnostics</span>
+                        <span>Fault Detection</span>
+                        <span>Enterprise Integration</span>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Learnings</h2>
+                    <ul>
+                        <li>Designing automated diagnostic systems for complex hardware environments</li>
+                        <li>Building reliable failure detection algorithms with low false-positive rates</li>
+                        <li>Integrating with enterprise systems and workflows</li>
+                        <li>Balancing automation with human oversight for critical systems</li>
+                        <li>Importance of configurable and extensible system design</li>
+                    </ul>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <p style="color: var(--text-muted); font-style: italic;">
+                        This is a proprietary HPE tool. Source code is not publicly available.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

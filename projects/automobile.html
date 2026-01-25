@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Analysis - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
+        .project-header { text-align: center; margin-bottom: 50px; }
+        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-content { max-width: 900px; margin: 0 auto; }
+        .project-section { margin-bottom: 3rem; }
+        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+        .project-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-left: 2rem; }
+        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
+        .back-button:hover { gap: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>Automobile Performance Analysis</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Comprehensive Data Analysis of Auto-MPG Dataset
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <p>
+                        Comprehensive analysis of automobile performance metrics focusing on fuel efficiency, 
+                        horsepower, and other key factors. This project explores relationships between various 
+                        vehicle attributes and their impact on miles per gallon (MPG).
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tasks"></i> Analysis Performed</h2>
+                    <ul>
+                        <li>Exploratory Data Analysis (EDA) of 398 automobile records</li>
+                        <li>Statistical analysis of fuel efficiency trends across decades</li>
+                        <li>Correlation analysis between vehicle weight, horsepower, and MPG</li>
+                        <li>Visualization of performance metrics and trends</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-line"></i> Key Findings</h2>
+                    <ul>
+                        <li>Strong negative correlation between vehicle weight and fuel efficiency</li>
+                        <li>Significant improvement in MPG over model years (1970-1982)</li>
+                        <li>European and Japanese cars showed better fuel efficiency than US cars</li>
+                        <li>4-cylinder engines demonstrated superior MPG compared to 8-cylinder engines</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>Jupyter Notebook</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/yourusername/automobile-analysis" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

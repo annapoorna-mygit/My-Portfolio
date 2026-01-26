@@ -18,6 +18,23 @@
         .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
         .back-button:hover { gap: 0.8rem; }
         .highlight-box { background: var(--dark-secondary); border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .stat-card { background: var(--dark-secondary); padding: 1.25rem; border-radius: 8px; text-align: center; }
+        .stat-card .number { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
+        .stat-card .label { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+        .proprietary-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-left: 1rem; }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .tech-table th, .tech-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--dark-secondary); }
+        .tech-table th { color: var(--primary-color); font-weight: 600; width: 30%; }
+        .tech-table td { color: var(--text-secondary); }
+        .hardware-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.5rem; margin: 1rem 0; }
+        .hardware-chip { background: var(--dark-secondary); padding: 0.5rem 0.75rem; border-radius: 6px; text-align: center; font-size: 0.85rem; color: var(--text-secondary); }
+        .code-block { background: var(--dark-secondary); padding: 1rem; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; margin: 1rem 0; }
+        .code-block code { color: #10b981; }
+        .scenario-list { list-style: none; margin-left: 0; }
+        .scenario-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--dark-secondary); display: flex; align-items: flex-start; gap: 0.75rem; }
+        .scenario-list li:last-child { border-bottom: none; }
+        .scenario-icon { color: var(--primary-color); min-width: 20px; }
     </style>
 </head>
 <body>
@@ -28,9 +45,12 @@
             </a>
             
             <div class="project-header">
-                <h1>Hardware Triage Tool (HTT)</h1>
+                <h1>
+                    Hardware Triage Tool (HTT)
+                    <span class="proprietary-badge"><i class="fas fa-lock"></i> Internal</span>
+                </h1>
                 <p style="color: var(--text-secondary); font-size: 1.1rem;">
-                    Automated Hardware Failure Detection & Remediation @ HPE
+                    Automated Hardware Failure Diagnosis & Remediation System @ HPE
                 </p>
             </div>
 
@@ -38,107 +58,208 @@
                 <div class="project-section">
                     <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
                     <p>
-                        The Hardware Triage Tool (HTT) is an automated system I developed at HPE to detect 
-                        node-level hardware failures in large-scale HPC clusters and recommend corrective actions. 
-                        The tool significantly reduces the time required for hardware diagnostics and enables 
-                        proactive maintenance strategies.
+                        The Hardware Triage Tool (HTT) is an automated diagnostic CLI tool that helps diagnose 
+                        various node hardware failures in large-scale HPC clusters and provides recommended actions 
+                        for each scenario. System administrators can quickly identify failure root causes and take 
+                        corrective actions, reducing manual triage time from hours to minutes.
                     </p>
+                    
                     <div class="highlight-box">
-                        <strong>Impact:</strong> HTT automates the hardware failure detection process, reducing 
-                        manual triage time from hours to minutes and enabling faster resolution of hardware issues 
-                        in production HPC environments.
+                        <strong>Impact:</strong> HTT automates hardware failure detection and provides actionable 
+                        repair recommendations. It supports <strong>11+ hardware platforms</strong>, detects 
+                        <strong>6 major failure scenarios</strong>, and generates structured JSON output for 
+                        downstream automation.
+                    </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="number">64+</div>
+                            <div class="label">Commits</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">6</div>
+                            <div class="label">Failure Scenarios</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">11+</div>
+                            <div class="label">Hardware Platforms</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-tasks"></i> Problem Statement</h2>
-                    <p>
-                        In large-scale HPC clusters with thousands of compute nodes, hardware failures are inevitable. 
-                        The challenges included:
-                    </p>
-                    <ul>
-                        <li>Manual hardware diagnostics were time-consuming and error-prone</li>
-                        <li>Delayed failure detection led to longer system downtimes</li>
-                        <li>Lack of standardized failure detection and tracking processes</li>
-                        <li>Limited integration with ticketing systems for automated remediation workflows</li>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Failure Scenarios Detected</h2>
+                    <p>HTT identifies the following types of node failure scenarios:</p>
+                    <ul class="scenario-list">
+                        <li><i class="fas fa-power-off scenario-icon"></i> <strong>Power-on Failure:</strong> A node fails to power on</li>
+                        <li><i class="fas fa-terminal scenario-icon"></i> <strong>Boot Failure:</strong> A node powers on but fails to boot (stuck at UEFI shell)</li>
+                        <li><i class="fas fa-heartbeat scenario-icon"></i> <strong>Health Check Failure:</strong> A node boots but fails the health check</li>
+                        <li><i class="fas fa-sync-alt scenario-icon"></i> <strong>Unexpected Reboot:</strong> A node reboots unexpectedly</li>
+                        <li><i class="fas fa-bolt scenario-icon"></i> <strong>Emergency Power Down:</strong> A node powers down unexpectedly (EPD)</li>
+                        <li><i class="fas fa-pause-circle scenario-icon"></i> <strong>Unresponsive Node:</strong> A node becomes unresponsive during job run</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-cogs"></i> Technical Implementation</h2>
+                    <h2><i class="fas fa-tasks"></i> My Key Contributions</h2>
+                    <p>Key modules and features I developed:</p>
+                    <ul>
+                        <li><strong>Structured JSON Triage Output:</strong> Designed <code>triage_output.json</code> with key-value repair actions for automated processing</li>
+                        <li><strong>Logging Framework:</strong> Built <code>triage_logger_util.py</code> - custom logging utility for consistent, structured logging</li>
+                        <li><strong>Stage-Specific Repair Actions:</strong> Developed workflow system for stage-specific repair recommendations</li>
+                        <li><strong>Power Rail Error Handling:</strong> Separated powerrail errors into dedicated key for better diagnostics</li>
+                        <li><strong>Global Version Tracking:</strong> Implemented HTT version tracking system</li>
+                        <li><strong>Blancapeak (EX254n) Support:</strong> Added complete hardware support with repair actions</li>
+                        <li><strong>RAS Poison Error Detection:</strong> Implemented detection and repair actions for RAS poison errors</li>
+                        <li><strong>Graceful Error Handling:</strong> Built robust error handling for missing scripts and timeouts</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-terminal"></i> CLI Interface</h2>
+                    <p>HTT provides a comprehensive CLI with extensive options for flexible diagnostics:</p>
                     
-                    <p><strong>Automated Failure Detection:</strong></p>
                     <ul>
-                        <li>Built detection algorithms to identify various hardware failure patterns</li>
-                        <li>Implemented diagnostic checks for CPU, memory, network, and storage components</li>
-                        <li>Used system logs and sensor data to pinpoint failure root causes</li>
-                        <li>Designed configurable rule engine using YAML for flexible failure definitions</li>
+                        <li><strong>Live Triage:</strong> Run diagnostics directly on nodes in real-time</li>
+                        <li><strong>Offline Analysis:</strong> Analyze existing log files for post-mortem diagnosis</li>
+                        <li><strong>Custom Workflows:</strong> Use custom YAML workflows for specialized diagnostics</li>
+                        <li><strong>Hardware Configuration:</strong> Specify hardware type and custom configs</li>
+                        <li><strong>Stage Control:</strong> Run specific stages or start from a particular stage</li>
+                        <li><strong>Serial Number Collection:</strong> Gather component serial numbers for tracking</li>
+                        <li><strong>Verbose Mode:</strong> Detailed output for debugging</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Architecture</h2>
+                    
+                    <p><strong>YAML-Based Workflow Engine:</strong></p>
+                    <ul>
+                        <li>Customizable workflow definitions for each hardware platform and node state</li>
+                        <li>Separate workflows for ON and OFF node conditions</li>
+                        <li>Stage-based processing with configurable actions and branching logic</li>
                     </ul>
                     
-                    <p style="margin-top: 1.5rem;"><strong>Remediation Recommendations:</strong></p>
+                    <div class="highlight-box">
+                        <strong>Workflow Design:</strong> Each workflow stage defines search patterns, 
+                        conditions, and recommended actions. Stages can branch to other stages based on 
+                        detection results, enabling complex diagnostic flows.
+                    </div>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>Hardware Configuration System:</strong></p>
                     <ul>
-                        <li>Developed recommendation engine to suggest corrective actions based on failure type</li>
-                        <li>Created priority classification system (Critical, High, Medium, Low)</li>
-                        <li>Generated detailed diagnostic reports for system administrators</li>
+                        <li>YAML-based hardware baseline configurations for each platform</li>
+                        <li>Automatic hardware mismatch detection (BIOS version, NIC count, firmware)</li>
+                        <li>Script to generate and update hardware baselines: <code>generate_hardware_yaml.py</code></li>
                     </ul>
 
-                    <p style="margin-top: 1.5rem;"><strong>Enterprise Integration:</strong></p>
+                    <p style="margin-top: 1.5rem;"><strong>Custom Scripts Framework:</strong></p>
                     <ul>
-                        <li>Integrated with HPE's enterprise ticketing systems for automated ticket creation</li>
-                        <li>Built REST API endpoints for integration with monitoring dashboards</li>
-                        <li>Implemented notification mechanisms for critical hardware failures</li>
-                        <li>Created automated workflows for failure tracking and resolution</li>
-                    </ul>
-
-                    <p style="margin-top: 1.5rem;"><strong>Automation & Scripting:</strong></p>
-                    <ul>
-                        <li>Developed Python modules for failure detection logic</li>
-                        <li>Created shell scripts for system-level diagnostic commands</li>
-                        <li>Built YAML-based configuration system for easy customization</li>
-                        <li>Implemented scheduling mechanisms for periodic health checks</li>
+                        <li>Extensible custom script system for specialized diagnostics</li>
+                        <li>Scripts return codes (0=detected, 1=not detected) for workflow branching</li>
+                        <li>Support for inline arguments (node controller, log path, etc.)</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-chart-bar"></i> Results & Impact</h2>
+                    <h2><i class="fas fa-server"></i> Supported Hardware Platforms</h2>
+                    <p>HTT supports diagnostics for the following HPE blade families:</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>EX Blades:</strong></p>
+                    <div class="hardware-grid">
+                        <div class="hardware-chip">EX235a</div>
+                        <div class="hardware-chip">EX235n</div>
+                        <div class="hardware-chip">EX254n</div>
+                        <div class="hardware-chip">EX255a</div>
+                        <div class="hardware-chip">EX425</div>
+                        <div class="hardware-chip">EX4252</div>
+                    </div>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>XD Blades:</strong></p>
+                    <div class="hardware-grid">
+                        <div class="hardware-chip">XD220v</div>
+                        <div class="hardware-chip">XD225v</div>
+                        <div class="hardware-chip">XD295v</div>
+                        <div class="hardware-chip">XD224</div>
+                        <div class="hardware-chip">XD670</div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-layer-group"></i> Technology Stack</h2>
+                    <table class="tech-table">
+                        <tr>
+                            <th>Languages</th>
+                            <td>Python 3 (83.7%), Bash Shell Scripts (16.3%)</td>
+                        </tr>
+                        <tr>
+                            <th>APIs</th>
+                            <td>Redfish API (BMC/hardware interaction), XML-RPC (Trac ticketing)</td>
+                        </tr>
+                        <tr>
+                            <th>Data Formats</th>
+                            <td>JSON (triage output, CPER files), YAML (workflows, configs)</td>
+                        </tr>
+                        <tr>
+                            <th>Infrastructure</th>
+                            <td>SSH (pdsh), CSM credentials API, HPCM credentials</td>
+                        </tr>
+                        <tr>
+                            <th>Hardware Interfaces</th>
+                            <td>NFPGA registers, PMBUS decoder, Port80 codes, MCE events</td>
+                        </tr>
+                        <tr>
+                            <th>Output</th>
+                            <td>Structured JSON, log files, serial number collection</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-file-alt"></i> Output & Logging</h2>
+                    <p>HTT generates comprehensive diagnostic output:</p>
                     <ul>
-                        <li><strong>90% reduction</strong> in manual triage time for hardware failures</li>
-                        <li><strong>Automated detection</strong> of 15+ different hardware failure patterns</li>
-                        <li><strong>Real-time alerting</strong> for critical hardware issues</li>
-                        <li><strong>Seamless integration</strong> with enterprise ticketing and monitoring systems</li>
-                        <li><strong>Improved MTTR</strong> (Mean Time To Resolution) for hardware incidents</li>
+                        <li><strong>Structured JSON Output:</strong> Machine-readable triage results with detected issues and repair actions</li>
+                        <li><strong>Detailed Logs:</strong> Complete logging of the triage process for debugging</li>
+                        <li><strong>Serial Numbers:</strong> Component serial numbers for hardware tracking</li>
+                        <li><strong>Health Reports:</strong> Node health check details and diagnostics</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <h2><i class="fas fa-chart-line"></i> Impact & Results</h2>
+                    <ul>
+                        <li><strong>Hours → Minutes:</strong> Reduced manual triage time through automated workflow-based diagnosis</li>
+                        <li><strong>6 Major Scenarios:</strong> Comprehensive detection of power, boot, health, and stability issues</li>
+                        <li><strong>11+ Platforms:</strong> Support for both EX and XD blade families</li>
+                        <li><strong>Extensible Design:</strong> YAML-based configs allow easy addition of new hardware/workflows</li>
+                        <li><strong>Custom Scripts:</strong> Framework for extending detection capabilities</li>
+                        <li><strong>Structured Output:</strong> JSON-based triage output enabling downstream automation</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies & Tools</h2>
                     <div class="project-tags" style="margin-top: 1rem;">
-                        <span>Python</span>
+                        <span>Python 3</span>
+                        <span>Bash</span>
+                        <span>Redfish API</span>
                         <span>YAML</span>
-                        <span>Shell Scripting</span>
-                        <span>REST APIs</span>
-                        <span>Automation</span>
-                        <span>System Diagnostics</span>
-                        <span>Fault Detection</span>
-                        <span>Enterprise Integration</span>
+                        <span>JSON</span>
+                        <span>CLI Development</span>
+                        <span>SSH/pdsh</span>
+                        <span>Hardware Diagnostics</span>
+                        <span>BMC Integration</span>
+                        <span>HPC Systems</span>
                     </div>
-                </div>
-
-                <div class="project-section">
-                    <h2><i class="fas fa-lightbulb"></i> Key Learnings</h2>
-                    <ul>
-                        <li>Designing automated diagnostic systems for complex hardware environments</li>
-                        <li>Building reliable failure detection algorithms with low false-positive rates</li>
-                        <li>Integrating with enterprise systems and workflows</li>
-                        <li>Balancing automation with human oversight for critical systems</li>
-                        <li>Importance of configurable and extensible system design</li>
-                    </ul>
                 </div>
 
                 <div class="project-section" style="text-align: center; margin-top: 3rem;">
-                    <p style="color: var(--text-muted); font-style: italic;">
-                        This is a proprietary HPE tool. Source code is not publicly available.
-                    </p>
+                    <div style="background: var(--dark-secondary); padding: 1.5rem; border-radius: 8px; display: inline-block;">
+                        <i class="fas fa-lock" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                        <span style="color: var(--text-muted);">Internal HPE tool. Source code on HPE GitHub Enterprise.</span>
+                    </div>
                 </div>
             </div>
         </div>

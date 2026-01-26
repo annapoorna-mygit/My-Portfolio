@@ -18,6 +18,14 @@
         .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
         .back-button:hover { gap: 0.8rem; }
         .highlight-box { background: var(--dark-secondary); border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .repo-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .repo-link { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--dark-secondary); padding: 0.75rem 1.25rem; border-radius: 8px; color: var(--text-primary); text-decoration: none; transition: all 0.3s ease; }
+        .repo-link:hover { background: var(--primary-color); transform: translateY(-2px); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .stat-card { background: var(--dark-secondary); padding: 1.25rem; border-radius: 8px; text-align: center; }
+        .stat-card .number { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
+        .stat-card .label { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+        .open-source-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #238636, #2ea043); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-left: 1rem; }
     </style>
 </head>
 <body>
@@ -28,108 +36,172 @@
             </a>
             
             <div class="project-header">
-                <h1>System Admin Toolkit (SAT)</h1>
+                <h1>
+                    System Admin Toolkit (SAT)
+                    <span class="open-source-badge"><i class="fab fa-github"></i> Open Source</span>
+                </h1>
                 <p style="color: var(--text-secondary); font-size: 1.1rem;">
-                    Production System for HPC/Exascale Cluster Administration @ HPE
+                    Python CLI Suite Transforming REST APIs into Human-Friendly Commands for World's Largest Supercomputers
                 </p>
+                
+                <div class="repo-links" style="justify-content: center;">
+                    <a href="https://github.com/Cray-HPE/sat" target="_blank" class="repo-link">
+                        <i class="fab fa-github"></i> SAT Repository
+                    </a>
+                    <a href="https://github.com/Cray-HPE/csm-testing/tree/release/1.7/src/csm_testing/tests/sat_functional" target="_blank" class="repo-link">
+                        <i class="fas fa-vial"></i> Automation Tests
+                    </a>
+                </div>
             </div>
 
             <div class="project-content">
                 <div class="project-section">
                     <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
                     <p>
-                        The System Admin Toolkit (SAT) is a critical Python-based production system that I lead 
-                        at Hewlett Packard Enterprise for administering large-scale High-Performance Computing (HPC) 
-                        and exascale clusters. SAT provides system administrators with powerful automation capabilities 
-                        to manage complex distributed computing environments efficiently.
+                        The System Admin Toolkit (SAT) is a Python-based CLI suite that transforms complex JSON REST APIs 
+                        into human-friendly commands for administering the world's largest supercomputers. Instead of 
+                        manually crafting API requests and parsing JSON responses, HPC administrators can execute simple 
+                        commands like <code>sat status</code> or <code>sat bootprep</code> to manage thousands of compute nodes.
                     </p>
                     <div class="highlight-box">
-                        <strong>Impact:</strong> SAT is deployed in production HPC environments worldwide and is 
-                        an integral component of HPE CSM (Cray Systems Management) v1.6.x and v1.7.x enterprise releases.
+                        <strong>Impact:</strong> As a <strong>top 3 contributor</strong> to SAT, I've helped turn hours of 
+                        manual API work into single commands used by HPC administrators worldwide. SAT is deployed in 
+                        production environments running some of the world's fastest supercomputers and is a core component 
+                        of HPE CSM (Cray Systems Management) enterprise releases.
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="number">1,600+</div>
+                            <div class="label">Commits</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">Top 3</div>
+                            <div class="label">Contributor</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">85%+</div>
+                            <div class="label">Test Coverage</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number"><i class="fas fa-user-graduate" style="font-size: 1.5rem;"></i></div>
+                            <div class="label">Mentoring</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-tasks"></i> My Role & Responsibilities</h2>
-                    <p>As the lead engineer for SAT, I own the component end-to-end:</p>
+                    <h2><i class="fas fa-users-cog"></i> Leadership & Team Management</h2>
+                    <p>I led this project end-to-end using Agile methodology:</p>
                     <ul>
-                        <li><strong>Architecture & Design:</strong> Define system architecture and design new features for scalability and reliability</li>
-                        <li><strong>Development:</strong> Implement complex features using Python, following best practices in OOP and distributed systems</li>
-                        <li><strong>Testing:</strong> Write comprehensive unit tests and automation tests following TDD principles</li>
-                        <li><strong>Code Reviews:</strong> Review code contributions and maintain code quality standards</li>
-                        <li><strong>Production Support:</strong> Debug production issues and provide support for customer deployments</li>
-                        <li><strong>Release Management:</strong> Coordinate releases and ensure successful delivery of enterprise versions</li>
+                        <li><strong>Sprint Planning:</strong> Conducted regular sprint planning sessions, breaking down epics into actionable user stories</li>
+                        <li><strong>Retrospectives:</strong> Facilitated retrospective meetings to continuously improve team processes and velocity</li>
+                        <li><strong>Release Management:</strong> Coordinated product releases, ensuring smooth delivery of HPE CSM v1.6.x and v1.7.x</li>
+                        <li><strong>Mentorship:</strong> Mentored other Engineers, guiding them through codebase, code reviews, and best practices</li>
+                        <li><strong>Cross-functional Collaboration:</strong> Worked with QA, DevOps, and product teams across different time zones</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-cogs"></i> Key Technical Features</h2>
-                    
-                    <p><strong>Scalable Backend Automation:</strong></p>
+                    <h2><i class="fas fa-tasks"></i> My Technical Contributions</h2>
+                    <p>Core SAT features I developed and maintain:</p>
                     <ul>
-                        <li>Designed and implemented automation workflows for distributed cluster management</li>
+                        <li><strong>Boot Image Management (bootprep):</strong> Automates creation and configuration of boot images for cluster nodes</li>
+                        <li><strong>Shutdown & Boot Optimization:</strong> Improved shutdown and boot workflows, significantly enhancing efficiency for cluster-wide operations on thousands of nodes</li>
+                        <li><strong>System Status (status):</strong> Real-time health monitoring and status reporting across thousands of nodes</li>
+                        <li><strong>Hardware Inventory (hwinv):</strong> Comprehensive hardware discovery and inventory management</li>
+                        <li><strong>Firmware Management:</strong> Orchestrates firmware updates across large-scale deployments</li>
+                        <li><strong>Node Configuration:</strong> Streamlines node setup and configuration management</li>
+                        <li><strong>Diagnostics & Troubleshooting:</strong> Built-in tools for system diagnostics and issue resolution</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>Performance Impact:</strong> Optimized shutdown and boot sequences to handle large-scale cluster operations more efficiently, reducing operational overhead for HPC administrators.
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Architecture</h2>
+                    
+                    <p><strong>REST API Abstraction Layer:</strong></p>
+                    <ul>
+                        <li>Transforms complex JSON REST API calls into intuitive CLI commands</li>
+                        <li>Handles authentication, pagination, and error handling transparently</li>
+                        <li>Provides consistent output formatting (table, JSON, YAML) for automation</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>Distributed Operations:</strong></p>
+                    <ul>
                         <li>Built orchestration layer to coordinate operations across thousands of compute nodes</li>
-                        <li>Optimized performance for handling large-scale deployments (exascale systems)</li>
-                    </ul>
-                    
-                    <p style="margin-top: 1.5rem;"><strong>System Administration Capabilities:</strong></p>
-                    <ul>
-                        <li>Node management and health monitoring</li>
-                        <li>Configuration management and deployment automation</li>
-                        <li>Diagnostics and troubleshooting workflows</li>
-                        <li>Integration with HPE's ecosystem of HPC management tools</li>
+                        <li>Implemented parallel execution with intelligent batching for performance</li>
+                        <li>Designed fault-tolerant workflows with retry logic and state management</li>
                     </ul>
 
-                    <p style="margin-top: 1.5rem;"><strong>Reliability & Fault Tolerance:</strong></p>
+                    <p style="margin-top: 1.5rem;"><strong>CI/CD Pipeline:</strong></p>
                     <ul>
-                        <li>Implemented error handling and recovery mechanisms for distributed operations</li>
-                        <li>Designed fault-tolerant workflows to handle node failures gracefully</li>
-                        <li>Built retry logic and state management for long-running operations</li>
+                        <li>Jenkins pipeline for automated builds, testing, and deployment</li>
+                        <li>Automated unit tests, integration tests, and code quality checks</li>
+                        <li>Container-based builds for consistent and reproducible releases</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-chart-line"></i> Technical Achievements</h2>
+                    <h2><i class="fas fa-vial"></i> Testing & Quality Assurance</h2>
+                    <p>
+                        I developed comprehensive automation tests for SAT in the 
+                        <a href="https://github.com/Cray-HPE/csm-testing" target="_blank" style="color: var(--primary-color);">csm-testing</a> 
+                        repository:
+                    </p>
                     <ul>
-                        <li>Successfully delivered multiple enterprise releases (HPE CSM v1.6.x, v1.7.x) on schedule</li>
-                        <li>Reduced system administration time by automating complex manual workflows</li>
-                        <li>Improved system reliability through comprehensive testing and fault-tolerant design</li>
-                        <li>Maintained high code quality with 85%+ unit test coverage</li>
-                        <li>Collaborated with cross-functional teams across different time zones</li>
+                        <li><strong>Functional Tests:</strong> End-to-end tests for bootprep, firmware, hwinv, status, showrev, and more</li>
+                        <li><strong>Unit Tests:</strong> 85%+ code coverage with comprehensive unit test suites</li>
+                        <li><strong>Integration Tests:</strong> Tests for API integrations and cross-service workflows</li>
+                        <li><strong>TDD Approach:</strong> Followed Test-Driven Development for new features</li>
                     </ul>
+                    <div class="highlight-box">
+                        <strong>Test Modules I Built:</strong> bootprep, firmware, hwinv, init, nid2xname, showrev, status, version
+                    </div>
                 </div>
 
                 <div class="project-section">
                     <h2><i class="fas fa-code"></i> Technologies & Tools</h2>
                     <div class="project-tags" style="margin-top: 1rem;">
-                        <span>Python (Advanced)</span>
-                        <span>Distributed Systems</span>
+                        <span>Python</span>
                         <span>REST APIs</span>
-                        <span>YAML</span>
+                        <span>CLI Development</span>
+                        <span>JSON/YAML</span>
+                        <span>Jenkins CI/CD</span>
+                        <span>Docker</span>
                         <span>Unit Testing</span>
                         <span>TDD</span>
                         <span>Git</span>
-                        <span>Jenkins (CI/CD)</span>
                         <span>Agile/Scrum</span>
                         <span>Code Reviews</span>
+                        <span>HPC Systems</span>
                     </div>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-lightbulb"></i> Key Learnings</h2>
+                    <h2><i class="fas fa-lightbulb"></i> Key Achievements</h2>
                     <ul>
-                        <li>Building production-grade systems that operate at exascale</li>
-                        <li>Designing fault-tolerant architectures for distributed environments</li>
-                        <li>Balancing feature development with system reliability and maintainability</li>
-                        <li>Effective collaboration in large enterprise software projects</li>
-                        <li>Importance of comprehensive testing in mission-critical systems</li>
+                        <li>Transformed complex REST API interactions into simple CLI commands used globally</li>
+                        <li>Successfully delivered multiple enterprise releases (HPE CSM v1.6.x, v1.7.x) on schedule</li>
+                        <li>Reduced system administration time from hours to minutes through automation</li>
+                        <li>Mentored new engineers, helping them become productive contributors</li>
+                        <li>Led Agile ceremonies and maintained high team velocity and morale</li>
+                        <li>Built comprehensive test automation ensuring production reliability</li>
                     </ul>
                 </div>
 
                 <div class="project-section" style="text-align: center; margin-top: 3rem;">
-                    <p style="color: var(--text-muted); font-style: italic;">
-                        This is a proprietary HPE product. Source code is not publicly available.
-                    </p>
+                    <div class="repo-links" style="justify-content: center;">
+                        <a href="https://github.com/Cray-HPE/sat" target="_blank" class="repo-link">
+                            <i class="fab fa-github"></i> View SAT on GitHub
+                        </a>
+                        <a href="https://github.com/Cray-HPE/csm-testing/tree/release/1.7/src/csm_testing/tests/sat_functional" target="_blank" class="repo-link">
+                            <i class="fas fa-vial"></i> View Automation Tests
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Customer Segmentation</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .segment-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .segment-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .segment-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .segment-card ul {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        @media (max-width: 768px) {
+            .segment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>Credit Card Customer Segmentation</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Unsupervised Machine Learning | UT Austin PG Data Science
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-briefcase"></i> Business Context</h2>
+                    <p>
+                        AllLife Bank wants to focus on its credit card customer base to increase market 
+                        penetration. The marketing team needs to understand different customer segments 
+                        to design targeted campaigns and personalized product offerings instead of 
+                        one-size-fits-all approaches.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                    <p>
+                        Identify distinct customer segments using unsupervised learning to enable:
+                    </p>
+                    <ul>
+                        <li>Targeted marketing campaigns for each segment</li>
+                        <li>Segment-specific credit card products and features</li>
+                        <li>Optimized customer acquisition costs</li>
+                        <li>Improved customer retention strategies</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
+                    <p><strong>1. Data Preparation:</strong></p>
+                    <ul>
+                        <li>Analyzed 8,950 credit card customers with 18 behavioral features</li>
+                        <li>Features: balance, purchases, cash advances, credit limit, payments, tenure</li>
+                        <li>Standardized features using StandardScaler</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>2. Dimensionality Reduction:</strong></p>
+                    <ul>
+                        <li>Applied PCA to reduce 18 features while preserving 85% variance</li>
+                        <li>Visualized clusters in 2D space for interpretation</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>3. Clustering:</strong></p>
+                    <ul>
+                        <li>Used Elbow Method and Silhouette Score to determine optimal K=4</li>
+                        <li>Applied K-Means clustering algorithm</li>
+                        <li>Validated with Hierarchical Clustering (Agglomerative)</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-users"></i> Identified Customer Segments</h2>
+                    <div class="segment-grid">
+                        <div class="segment-card">
+                            <div class="emoji">💎</div>
+                            <h3>Premium Spenders (18%)</h3>
+                            <ul>
+                                <li>High credit limit ($15K+)</li>
+                                <li>High spending across categories</li>
+                                <li>Full payment behavior</li>
+                                <li>Low credit utilization</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;"><strong>Strategy:</strong> Premium rewards, exclusive perks</p>
+                        </div>
+                        <div class="segment-card">
+                            <div class="emoji">🔄</div>
+                            <h3>Revolvers (32%)</h3>
+                            <ul>
+                                <li>Moderate credit limit</li>
+                                <li>Carry balances monthly</li>
+                                <li>High interest revenue</li>
+                                <li>Cash advance users</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;"><strong>Strategy:</strong> Balance transfer offers, limit increases</p>
+                        </div>
+                        <div class="segment-card">
+                            <div class="emoji">💳</div>
+                            <h3>Transactors (28%)</h3>
+                            <ul>
+                                <li>Pay full balance monthly</li>
+                                <li>Use card for convenience</li>
+                                <li>Low interest revenue</li>
+                                <li>High transaction volume</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;"><strong>Strategy:</strong> Cashback, transaction rewards</p>
+                        </div>
+                        <div class="segment-card">
+                            <div class="emoji">😴</div>
+                            <h3>Dormant (22%)</h3>
+                            <ul>
+                                <li>Low activity</li>
+                                <li>Minimal purchases</li>
+                                <li>Low engagement</li>
+                                <li>Risk of churn</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;"><strong>Strategy:</strong> Re-engagement campaigns, activation offers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Results & Impact</h2>
+                    <div class="highlight-box">
+                        <p><strong>Silhouette Score:</strong> 0.42 (good cluster separation)</p>
+                        <p><strong>Business Impact:</strong> 20-30% improved campaign response rates with targeted marketing</p>
+                        <p><strong>Customer Insights:</strong> Clear behavioral profiles for personalized offerings</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-check-circle"></i> Business Recommendations</h2>
+                    <ul>
+                        <li><strong>Premium Spenders:</strong> Offer exclusive travel perks and concierge services</li>
+                        <li><strong>Revolvers:</strong> Provide balance transfer promotions and credit limit increases</li>
+                        <li><strong>Transactors:</strong> Focus on cashback and merchant partnership rewards</li>
+                        <li><strong>Dormant:</strong> Run re-activation campaigns with sign-up bonuses</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>K-Means</span>
+                        <span>Hierarchical Clustering</span>
+                        <span>PCA</span>
+                        <span>Scikit-learn</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Unsupervised-Learning" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

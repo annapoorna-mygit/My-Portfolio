@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Wheels - SQL Sales Analysis</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .code-block {
+            background: #1e1e2e;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .code-block code {
+            color: #a6e3a1;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .sql-concepts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .concept-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .sql-concepts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>New Wheels - SQL Sales Analysis</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    SQL & Business Intelligence | UT Austin PG Data Science
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-briefcase"></i> Business Context</h2>
+                    <p>
+                        New-Wheels is an online vehicle resale company that has experienced a decline in 
+                        sales. The CEO wants a quarterly business report analyzing sales performance, 
+                        customer satisfaction, and operational metrics to identify areas for improvement 
+                        and inform strategic decisions.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                    <p>
+                        Write SQL queries to generate a comprehensive business report answering:
+                    </p>
+                    <ul>
+                        <li>How are sales trending across quarters and years?</li>
+                        <li>Which vehicle types and segments perform best?</li>
+                        <li>What is the customer satisfaction trend?</li>
+                        <li>How efficient is the order-to-delivery process?</li>
+                        <li>Which regions and customers drive the most revenue?</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-database"></i> SQL Concepts Applied</h2>
+                    <div class="sql-concepts">
+                        <div class="concept-tag">JOINs</div>
+                        <div class="concept-tag">CTEs</div>
+                        <div class="concept-tag">Window Functions</div>
+                        <div class="concept-tag">Subqueries</div>
+                        <div class="concept-tag">Aggregations</div>
+                        <div class="concept-tag">CASE Statements</div>
+                        <div class="concept-tag">GROUP BY</div>
+                        <div class="concept-tag">RANK/ROW_NUMBER</div>
+                        <div class="concept-tag">Date Functions</div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Sample Query - Quarterly Revenue Trend</h2>
+                    <div class="code-block">
+                        <code>
+WITH quarterly_sales AS (<br>
+&nbsp;&nbsp;SELECT <br>
+&nbsp;&nbsp;&nbsp;&nbsp;YEAR(order_date) AS year,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QUARTER(order_date) AS quarter,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SUM(vehicle_price) AS revenue,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;COUNT(order_id) AS orders<br>
+&nbsp;&nbsp;FROM orders o<br>
+&nbsp;&nbsp;JOIN order_details od ON o.order_id = od.order_id<br>
+&nbsp;&nbsp;GROUP BY YEAR(order_date), QUARTER(order_date)<br>
+)<br>
+SELECT *,<br>
+&nbsp;&nbsp;LAG(revenue) OVER (ORDER BY year, quarter) AS prev_revenue,<br>
+&nbsp;&nbsp;ROUND((revenue - LAG(revenue) OVER (ORDER BY year, quarter)) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;/ LAG(revenue) OVER (ORDER BY year, quarter) * 100, 2) AS growth_pct<br>
+FROM quarterly_sales;
+                        </code>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Findings</h2>
+                    <div class="highlight-box">
+                        <p><strong>Revenue decline:</strong> 15% YoY drop in Q4 2023 vs Q4 2022</p>
+                        <p><strong>Top segment:</strong> SUVs contribute 42% of total revenue</p>
+                        <p><strong>Customer satisfaction:</strong> Dropped from 4.2 to 3.8 (out of 5)</p>
+                        <p><strong>Delivery time:</strong> Average increased from 5 to 8 days</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-check-circle"></i> Recommendations to CEO</h2>
+                    <ul>
+                        <li><strong>Inventory focus:</strong> Increase SUV inventory - highest demand and margins</li>
+                        <li><strong>Delivery improvement:</strong> Partner with additional logistics providers to reduce delivery time</li>
+                        <li><strong>Customer retention:</strong> Implement follow-up program for low-satisfaction customers</li>
+                        <li><strong>Regional strategy:</strong> Expand marketing in high-growth regions (West, South)</li>
+                        <li><strong>Pricing optimization:</strong> Adjust pricing on slow-moving sedan inventory</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tools"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>Window Functions</span>
+                        <span>CTEs</span>
+                        <span>Data Analysis</span>
+                        <span>Business Intelligence</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/annapoorna-mygit/PDS/tree/main/SQL" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View SQL Queries on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

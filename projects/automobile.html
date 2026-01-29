@@ -3,20 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automobile Analysis - Project Details</title>
+    <title>Austo Automobile - Exploratory Data Analysis</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
-        .project-header { text-align: center; margin-bottom: 50px; }
-        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .project-content { max-width: 900px; margin: 0 auto; }
-        .project-section { margin-bottom: 3rem; }
-        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
-        .project-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
-        .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-left: 2rem; }
-        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
-        .back-button:hover { gap: 0.8rem; }
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .analysis-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .analysis-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -27,39 +90,87 @@
             </a>
             
             <div class="project-header">
-                <h1>Automobile Performance Analysis</h1>
+                <h1>Austo Automobile - Exploratory Data Analysis</h1>
                 <p style="color: var(--text-secondary); font-size: 1.1rem;">
-                    Comprehensive Data Analysis of Auto-MPG Dataset
+                    Python EDA & Statistical Analysis | UT Austin PG Data Science
                 </p>
             </div>
 
             <div class="project-content">
                 <div class="project-section">
-                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <h2><i class="fas fa-briefcase"></i> Business Context</h2>
                     <p>
-                        Comprehensive analysis of automobile performance metrics focusing on fuel efficiency, 
-                        horsepower, and other key factors. This project explores relationships between various 
-                        vehicle attributes and their impact on miles per gallon (MPG).
+                        Austo Motor Company is a US-based automobile manufacturer expanding into the 
+                        Australian market. To develop an effective pricing strategy and product lineup, 
+                        they need to understand the factors that influence car prices and customer 
+                        preferences in this new market.
                     </p>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-tasks"></i> Analysis Performed</h2>
+                    <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                    <p>
+                        Conduct comprehensive exploratory data analysis to answer:
+                    </p>
                     <ul>
-                        <li>Exploratory Data Analysis (EDA) of 398 automobile records</li>
-                        <li>Statistical analysis of fuel efficiency trends across decades</li>
-                        <li>Correlation analysis between vehicle weight, horsepower, and MPG</li>
-                        <li>Visualization of performance metrics and trends</li>
+                        <li>What factors most strongly influence car prices?</li>
+                        <li>How does fuel efficiency vary across vehicle types?</li>
+                        <li>What are the relationships between engine specs and performance?</li>
+                        <li>Which features should be prioritized for the Australian market?</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2><i class="fas fa-chart-line"></i> Key Findings</h2>
+                    <h2><i class="fas fa-cogs"></i> Analysis Approach</h2>
+                    <div class="analysis-grid">
+                        <div class="analysis-card">
+                            <h3><i class="fas fa-broom"></i> Data Cleaning</h3>
+                            <p>Handled missing values, outliers, and data type conversions</p>
+                        </div>
+                        <div class="analysis-card">
+                            <h3><i class="fas fa-chart-bar"></i> Univariate Analysis</h3>
+                            <p>Distribution analysis for numerical and categorical variables</p>
+                        </div>
+                        <div class="analysis-card">
+                            <h3><i class="fas fa-chart-line"></i> Bivariate Analysis</h3>
+                            <p>Correlation analysis and relationship exploration</p>
+                        </div>
+                        <div class="analysis-card">
+                            <h3><i class="fas fa-cube"></i> Multivariate Analysis</h3>
+                            <p>Feature interactions and complex pattern discovery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Findings</h2>
+                    <div class="highlight-box">
+                        <p><strong>Price drivers:</strong> Engine size (0.87 correlation) and horsepower (0.81) most influential</p>
+                        <p><strong>Fuel efficiency:</strong> Diesel engines 15% more efficient than petrol on average</p>
+                        <p><strong>Body type:</strong> SUVs command 22% premium over sedans</p>
+                        <p><strong>Brand impact:</strong> Luxury brands show 40% price premium for similar specs</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-pie"></i> Visualizations Created</h2>
                     <ul>
-                        <li>Strong negative correlation between vehicle weight and fuel efficiency</li>
-                        <li>Significant improvement in MPG over model years (1970-1982)</li>
-                        <li>European and Japanese cars showed better fuel efficiency than US cars</li>
-                        <li>4-cylinder engines demonstrated superior MPG compared to 8-cylinder engines</li>
+                        <li><strong>Heatmaps:</strong> Correlation matrix showing feature relationships</li>
+                        <li><strong>Box plots:</strong> Price distribution by fuel type, body style, drive type</li>
+                        <li><strong>Scatter plots:</strong> Engine size vs. price with horsepower color coding</li>
+                        <li><strong>Histograms:</strong> Distribution of MPG, engine size, and price</li>
+                        <li><strong>Pair plots:</strong> Multi-dimensional relationship visualization</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-check-circle"></i> Recommendations</h2>
+                    <ul>
+                        <li><strong>Product focus:</strong> Prioritize SUVs and crossovers for Australian launch</li>
+                        <li><strong>Engine strategy:</strong> Offer diesel variants for fuel-conscious buyers</li>
+                        <li><strong>Pricing model:</strong> Use engine size and horsepower as primary pricing factors</li>
+                        <li><strong>Feature emphasis:</strong> Highlight fuel efficiency in marketing campaigns</li>
+                        <li><strong>Segment targeting:</strong> Position mid-range vehicles for maximum market penetration</li>
                     </ul>
                 </div>
 
@@ -71,12 +182,13 @@
                         <span>NumPy</span>
                         <span>Matplotlib</span>
                         <span>Seaborn</span>
+                        <span>Statistical Analysis</span>
                         <span>Jupyter Notebook</span>
                     </div>
                 </div>
 
                 <div class="project-section" style="text-align: center; margin-top: 3rem;">
-                    <a href="https://github.com/yourusername/automobile-analysis" 
+                    <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Austo-Automobile" 
                        class="btn btn-primary" target="_blank">
                         <i class="fab fa-github"></i> View Code on GitHub
                     </a>

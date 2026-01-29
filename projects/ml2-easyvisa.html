@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyVisa - Visa Approval Prediction</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .results-table th, .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .results-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+        .results-table tr:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>EasyVisa - Visa Approval Prediction</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Ensemble Machine Learning | UT Austin PG Data Science
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-briefcase"></i> Business Context</h2>
+                    <p>
+                        EasyVisa is a consultancy helping employers obtain work visas for foreign employees. 
+                        The US visa application process is complex, with OFLC (Office of Foreign Labor Certification) 
+                        reviewing applications based on multiple factors. Understanding these factors helps 
+                        improve approval rates and reduce processing time.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                    <p>
+                        Build a classification model to predict visa certification outcomes and identify 
+                        key factors influencing decisions:
+                    </p>
+                    <ul>
+                        <li>Predict whether a visa application will be Certified or Denied</li>
+                        <li>Identify most important features affecting certification</li>
+                        <li>Provide actionable recommendations for improving approval rates</li>
+                        <li>Help employers prepare stronger applications</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
+                    <p><strong>1. Data Analysis:</strong></p>
+                    <ul>
+                        <li>Analyzed 25,480 visa applications with employer and employee attributes</li>
+                        <li>Explored features: education level, experience, wage, region, job category</li>
+                        <li>Identified class imbalance (66% Certified, 34% Denied)</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>2. Feature Engineering:</strong></p>
+                    <ul>
+                        <li>Created wage ratio feature (offered vs. prevailing wage)</li>
+                        <li>Encoded education levels with ordinal mapping</li>
+                        <li>Applied SMOTE to handle class imbalance</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>3. Model Development:</strong></p>
+                    <ul>
+                        <li>Implemented Decision Tree, Random Forest, AdaBoost, Gradient Boosting, XGBoost</li>
+                        <li>Performed extensive hyperparameter tuning using GridSearchCV</li>
+                        <li>Used stratified K-fold cross-validation</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Feature Importance</h2>
+                    <div class="highlight-box">
+                        <p><strong>1. Prevailing Wage</strong> - Most influential factor (higher wage = higher approval)</p>
+                        <p><strong>2. Education Level</strong> - Master's/Doctorate significantly improve chances</p>
+                        <p><strong>3. Job Experience</strong> - Required experience correlates with certification</p>
+                        <p><strong>4. Region of Employment</strong> - Certain states have higher approval rates</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Model Performance</h2>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Accuracy</th>
+                                <th>AUC-ROC</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Decision Tree</td>
+                                <td>81%</td>
+                                <td>0.85</td>
+                                <td>79%</td>
+                                <td>78%</td>
+                            </tr>
+                            <tr>
+                                <td>Random Forest</td>
+                                <td>86%</td>
+                                <td>0.90</td>
+                                <td>84%</td>
+                                <td>83%</td>
+                            </tr>
+                            <tr>
+                                <td>Gradient Boosting</td>
+                                <td>87%</td>
+                                <td>0.91</td>
+                                <td>85%</td>
+                                <td>84%</td>
+                            </tr>
+                            <tr style="background: rgba(99, 102, 241, 0.15);">
+                                <td><strong>XGBoost (Tuned)</strong></td>
+                                <td><strong>89%</strong></td>
+                                <td><strong>0.92</strong></td>
+                                <td><strong>87%</strong></td>
+                                <td><strong>86%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-check-circle"></i> Business Recommendations</h2>
+                    <ul>
+                        <li><strong>Wage positioning:</strong> Offer wages above prevailing wage threshold</li>
+                        <li><strong>Education emphasis:</strong> Prioritize candidates with advanced degrees</li>
+                        <li><strong>Experience documentation:</strong> Clearly document required job experience</li>
+                        <li><strong>Regional strategy:</strong> Consider employment regions with higher approval rates</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>XGBoost</span>
+                        <span>Scikit-learn</span>
+                        <span>SMOTE</span>
+                        <span>GridSearchCV</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Machine-Learning-II" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

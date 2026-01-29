@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INN Hotels - Booking Cancellation Prediction</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .project-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .project-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        .back-button:hover {
+            gap: 0.8rem;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .results-table th, .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .results-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+        .results-table tr:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <div class="project-header">
+                <h1>INN Hotels - Booking Cancellation Prediction</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Supervised Machine Learning | UT Austin PG Data Science
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-briefcase"></i> Business Context</h2>
+                    <p>
+                        INN Hotels Group operates a chain of hotels across Portugal. They face a significant 
+                        challenge with booking cancellations, which directly impacts revenue and resource 
+                        planning. A high cancellation rate leads to loss of revenue, suboptimal resource 
+                        allocation, and difficulty in demand forecasting.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                    <p>
+                        Build a predictive model to identify bookings likely to be canceled, enabling:
+                    </p>
+                    <ul>
+                        <li>Targeted retention strategies for high-risk bookings</li>
+                        <li>Optimized overbooking policies</li>
+                        <li>Improved revenue management</li>
+                        <li>Enhanced customer experience through proactive engagement</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
+                    <p><strong>1. Exploratory Data Analysis:</strong></p>
+                    <ul>
+                        <li>Analyzed 36,275 booking records with 17 features</li>
+                        <li>Identified patterns in lead times, deposit types, and booking channels</li>
+                        <li>Discovered seasonal trends and customer segment behaviors</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>2. Feature Engineering:</strong></p>
+                    <ul>
+                        <li>Created derived features: total guests, stay duration, booking changes</li>
+                        <li>Encoded categorical variables using one-hot encoding</li>
+                        <li>Applied feature scaling for distance-based algorithms</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;"><strong>3. Model Development:</strong></p>
+                    <ul>
+                        <li>Implemented Logistic Regression, Decision Trees, Random Forest</li>
+                        <li>Handled class imbalance using SMOTE</li>
+                        <li>Performed hyperparameter tuning with GridSearchCV</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-lightbulb"></i> Key Findings</h2>
+                    <div class="highlight-box">
+                        <p><strong>73%</strong> of cancellations come from bookings with lead time > 100 days</p>
+                        <p><strong>2.5x</strong> higher cancellation rate for bookings without deposit</p>
+                        <p><strong>45%</strong> of online travel agent bookings get canceled</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-bar"></i> Model Performance</h2>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Accuracy</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>F1-Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Logistic Regression</td>
+                                <td>79%</td>
+                                <td>76%</td>
+                                <td>72%</td>
+                                <td>74%</td>
+                            </tr>
+                            <tr>
+                                <td>Decision Tree</td>
+                                <td>82%</td>
+                                <td>80%</td>
+                                <td>78%</td>
+                                <td>79%</td>
+                            </tr>
+                            <tr style="background: rgba(99, 102, 241, 0.15);">
+                                <td><strong>Random Forest</strong></td>
+                                <td><strong>86%</strong></td>
+                                <td><strong>84%</strong></td>
+                                <td><strong>82%</strong></td>
+                                <td><strong>83%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-check-circle"></i> Business Recommendations</h2>
+                    <ul>
+                        <li><strong>Early intervention:</strong> Contact high-risk bookings 2 weeks before arrival</li>
+                        <li><strong>Deposit policy:</strong> Require deposits for bookings with lead time > 60 days</li>
+                        <li><strong>Channel management:</strong> Implement stricter policies for OTA bookings</li>
+                        <li><strong>Dynamic pricing:</strong> Offer incentives for non-refundable bookings</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Technologies Used</h2>
+                    <div class="project-tags" style="margin-top: 1rem;">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                        <span>Random Forest</span>
+                        <span>SMOTE</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                    </div>
+                </div>
+
+                <div class="project-section" style="text-align: center; margin-top: 3rem;">
+                    <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Machine-Learning-I" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

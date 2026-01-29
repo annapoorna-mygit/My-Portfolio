@@ -17,8 +17,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -57,6 +58,47 @@
                     <a href="mailto:1203annapoorna@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a Systems Software Engineer at Hewlett Packard Enterprise (HPE) with 3+ years 
+                        of experience building production systems for large-scale HPC and AI clusters. I specialize 
+                        in Python-based backend development, distributed systems architecture, automation, and 
+                        reliability engineering.
+                    </p>
+                    <p>
+                        At HPE, I lead the development of the System Admin Toolkit (SAT), a critical production 
+                        system that administers exascale computing environments. I also built the Hardware Triage 
+                        Tool (HTT) for automated failure detection and remediation. Beyond my systems engineering 
+                        work, I'm expanding my expertise in data science and machine learning through the University 
+                        of Texas at Austin program, combining my software engineering skills with advanced analytics.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <h3>Clean Code</h3>
+                            <p>Writing maintainable and efficient code</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-brain"></i>
+                            <h3>Problem Solver</h3>
+                            <p>Analytical thinking and innovation</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Data-Driven</h3>
+                            <p>Evidence-based decision making</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,64 +149,40 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="timeline-content">
-                        <h3>Education</h3>
+                        <h3>Post Graduate Program in Data Science</h3>
                         <h4>University of Texas at Austin (via Great Learning)</h4>
                         <p class="timeline-date">
                             <i class="fas fa-calendar"></i> Feb 2025 – Feb 2026
                         </p>
-                        <p>Post Graduate Program in Data Science</p>
-                        
-                        <h4 style="margin-top: 1.5rem;">JSS Science and Technology University (SJCE)</h4>
+                        <p>Coursework: Machine Learning, Statistical Analysis, Data Visualization, SQL, Python for Data Science</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Engineering in Computer Science</h3>
+                        <h4>JSS Science and Technology University (SJCE)</h4>
                         <p class="timeline-date">
                             <i class="fas fa-calendar"></i> 2019 – 2023 | Mysuru, India
                         </p>
-                        <p>Bachelor of Engineering in Computer Science | <strong>CGPA: 9.25/10</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a Systems Software Engineer at Hewlett Packard Enterprise (HPE) with 3+ years 
-                        of experience building production systems for large-scale HPC and AI clusters. I specialize 
-                        in Python-based backend development, distributed systems architecture, automation, and 
-                        reliability engineering.
-                    </p>
-                    <p>
-                        At HPE, I lead the development of the System Admin Toolkit (SAT), a critical production 
-                        system that administers exascale computing environments. I also built the Hardware Triage 
-                        Tool (HTT) for automated failure detection and remediation. Beyond my systems engineering 
-                        work, I'm expanding my expertise in data science and machine learning through the University 
-                        of Texas at Austin program, combining my software engineering skills with advanced analytics.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <h3>Clean Code</h3>
-                            <p>Writing maintainable and efficient code</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-brain"></i>
-                            <h3>Problem Solver</h3>
-                            <p>Analytical thinking and innovation</p>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Data-Driven</h3>
-                            <p>Evidence-based decision making</p>
-                        </div>
+                        <p><strong>CGPA: 9.25/10</strong></p>
                     </div>
                 </div>
             </div>
@@ -310,153 +328,180 @@
                     </div>
                     <h3>Engine Failure Prediction</h3>
                     <p>
-                        Developed a predictive model to forecast engine failures using machine 
-                        learning algorithms. Implemented feature engineering and model optimization 
-                        to achieve high accuracy in failure prediction.
+                        Developed a predictive maintenance model to forecast engine failures using 
+                        Random Forest classification. Achieved 92% accuracy through feature engineering 
+                        on sensor data and hyperparameter tuning.
                     </p>
                     <div class="project-tags">
                         <span>Python</span>
                         <span>Scikit-learn</span>
-                        <span>Pandas</span>
+                        <span>Random Forest</span>
                         <span>Predictive Modeling</span>
                     </div>
                     <div class="project-links">
                         <a href="projects/engine-failure.html" class="project-link">
                             <i class="fas fa-external-link-alt"></i> View Details
                         </a>
-                        <a href="https://github.com/yourusername/engine-failure" target="_blank" class="project-link">
+                    </div>
+                </div>
+
+                <!-- Project: INN Hotels - Booking Cancellation Prediction -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>INN Hotels - Booking Cancellation</h3>
+                    <p>
+                        Built supervised learning model to predict hotel booking cancellations (86% accuracy). 
+                        Analyzed lead times, deposit policies, and booking channels to provide actionable 
+                        recommendations for revenue optimization.
+                    </p>
+                    <div class="project-tags">
+                        <span>Machine Learning</span>
+                        <span>Classification</span>
+                        <span>Random Forest</span>
+                        <span>Business Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/ml1-hotel-booking.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                        <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Machine-Learning-I" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> Code
                         </a>
                     </div>
                 </div>
 
-                <!-- Project 2: Automobile Analytics -->
+                <!-- Project: EasyVisa - Visa Approval Prediction -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>EasyVisa - Visa Approval Prediction</h3>
+                    <p>
+                        Ensemble learning model (XGBoost) predicting US visa certification with 89% accuracy 
+                        and 0.92 AUC-ROC. Identified key factors: prevailing wage, education level, and job 
+                        experience using feature importance analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span>XGBoost</span>
+                        <span>Ensemble Methods</span>
+                        <span>SMOTE</span>
+                        <span>GridSearchCV</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/ml2-easyvisa.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                        <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Machine-Learning-II" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: Credit Card Customer Segmentation -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Credit Card Customer Segmentation</h3>
+                    <p>
+                        K-Means clustering to segment 8,950 credit card customers into 4 distinct groups 
+                        (Premium Spenders, Revolvers, Transactors, Dormant). Enabled targeted marketing 
+                        strategies with 20-30% improved campaign response rates.
+                    </p>
+                    <div class="project-tags">
+                        <span>Unsupervised Learning</span>
+                        <span>K-Means</span>
+                        <span>PCA</span>
+                        <span>Customer Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/credit-card-segmentation.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                        <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Unsupervised-Learning" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: Car Insurance Claims - Tableau -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Car Insurance Claims - Tableau Dashboard</h3>
+                    <p>
+                        Interactive Tableau storyboard with 5+ dashboards analyzing insurance claims patterns. 
+                        Presented actionable insights to Senior Management on risk-based pricing, seasonal 
+                        trends, and fraud detection patterns.
+                    </p>
+                    <div class="project-tags">
+                        <span>Tableau</span>
+                        <span>Data Visualization</span>
+                        <span>Storytelling</span>
+                        <span>Business Intelligence</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/car-insurance-viz.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                        <a href="https://public.tableau.com/views/CarInsuranceClaimProject_17661475480940/AgeDistribution" target="_blank" class="project-link">
+                            <i class="fas fa-chart-bar"></i> Tableau
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: New Wheels - SQL Analysis -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>New Wheels - SQL Sales Analysis</h3>
+                    <p>
+                        SQL-based business intelligence analyzing vehicle sales performance across quarters, 
+                        regions, and customer segments. Used CTEs, window functions, and complex joins to 
+                        derive insights for inventory optimization.
+                    </p>
+                    <div class="project-tags">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>Window Functions</span>
+                        <span>Business Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/new-wheels-sql.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                        <a href="https://github.com/annapoorna-mygit/PDS/tree/main/SQL" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: Austo Automobile Analysis -->
                 <div class="project-card">
                     <div class="project-icon">
                         <i class="fas fa-car"></i>
                     </div>
-                    <h3>Automobile Performance Analysis</h3>
+                    <h3>Austo Automobile EDA</h3>
                     <p>
-                        Comprehensive analysis of automobile dataset exploring fuel efficiency, 
-                        performance metrics, and trends. Applied statistical methods and 
-                        visualization techniques to derive insights.
+                        Comprehensive exploratory data analysis of automobile performance metrics. 
+                        Analyzed fuel efficiency, horsepower correlations, and regional trends using 
+                        statistical methods and visualizations.
                     </p>
                     <div class="project-tags">
                         <span>Python</span>
-                        <span>Data Analysis</span>
-                        <span>Visualization</span>
-                        <span>Statistics</span>
+                        <span>Pandas</span>
+                        <span>EDA</span>
+                        <span>Data Visualization</span>
                     </div>
                     <div class="project-links">
                         <a href="projects/automobile.html" class="project-link">
                             <i class="fas fa-external-link-alt"></i> View Details
                         </a>
-                        <a href="https://github.com/yourusername/automobile-analysis" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Hotel Booking Prediction -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <h3>Hotel Booking Cancellation Prediction</h3>
-                    <p>
-                        Built a classification model to predict hotel booking cancellations. 
-                        Analyzed customer behavior patterns and implemented various ML algorithms 
-                        to optimize business strategies.
-                    </p>
-                    <div class="project-tags">
-                        <span>Classification</span>
-                        <span>Machine Learning</span>
-                        <span>EDA</span>
-                        <span>Feature Engineering</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/hotel-booking.html" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Details
-                        </a>
-                        <a href="https://github.com/yourusername/hotel-booking" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Decision Tree Implementation -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Decision Tree Models</h3>
-                    <p>
-                        Implemented and optimized decision tree algorithms for classification 
-                        problems. Explored pruning techniques and ensemble methods to improve 
-                        model performance.
-                    </p>
-                    <div class="project-tags">
-                        <span>Decision Trees</span>
-                        <span>Classification</span>
-                        <span>Model Tuning</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/decision-tree.html" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Details
-                        </a>
-                        <a href="https://github.com/yourusername/decision-tree" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Inferential Statistics -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Statistical Analysis & Hypothesis Testing</h3>
-                    <p>
-                        Applied inferential statistics techniques including hypothesis testing, 
-                        confidence intervals, and statistical modeling to draw meaningful 
-                        conclusions from data.
-                    </p>
-                    <div class="project-tags">
-                        <span>Statistics</span>
-                        <span>Hypothesis Testing</span>
-                        <span>Python</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/statistics.html" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Details
-                        </a>
-                        <a href="https://github.com/yourusername/statistics" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6: Predictive Modeling -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-analytics"></i>
-                    </div>
-                    <h3>Advanced Predictive Modeling</h3>
-                    <p>
-                        Developed and deployed predictive models using regression techniques, 
-                        ensemble methods, and neural networks. Focused on model interpretability 
-                        and business impact.
-                    </p>
-                    <div class="project-tags">
-                        <span>Regression</span>
-                        <span>Neural Networks</span>
-                        <span>Model Deployment</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/predictive-modeling.html" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Details
-                        </a>
-                        <a href="https://github.com/yourusername/predictive-modeling" target="_blank" class="project-link">
+                        <a href="https://github.com/annapoorna-mygit/PDS/tree/main/Austo-Automobile" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> Code
                         </a>
                     </div>

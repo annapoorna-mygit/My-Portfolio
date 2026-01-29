@@ -378,6 +378,13 @@ section {
     color: var(--text-primary);
 }
 
+/* ===========================
+   Education Section
+   =========================== */
+.education {
+    background: var(--dark-secondary);
+}
+
 /* Featured project cards */
 .project-card.featured {
     border: 2px solid var(--primary-color);

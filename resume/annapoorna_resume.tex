@@ -1,0 +1,149 @@
+%-------------------------
+% ATS-Friendly Resume in LaTeX
+% Author: Annapoorna S
+%-------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins - tighter for one page
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting - tighter spacing
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-3pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+%-------------------------------------------
+%  RESUME STARTS HERE
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Annapoorna S} \\ \vspace{2pt}
+    \small +91-7483893047 $|$ \href{mailto:1203annapoorna@gmail.com}{1203annapoorna@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/annapoorna-s-a18b371a5/}{LinkedIn} $|$
+    \href{https://github.com/annapoorna-mygit}{GitHub} $|$
+    Bengaluru, India
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{Software Development Engineer with 3+ years of experience building scalable, distributed systems at Hewlett Packard Enterprise. Expert in developing backend services and API integrations with 15+ Kubernetes microservices. Strong ownership mindset with proven track record in end-to-end feature delivery, TDD (85\%+ coverage), and mentoring engineers. Passionate about solving complex problems at scale.}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Software Development Engineer}{Sep 2023 -- Present}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Owned end-to-end development of System Admin Toolkit (SAT), an open-source platform with 1,600+ commits; designed and implemented APIs integrating with 15+ distributed microservices}
+        \resumeItem{Built highly available backend services consuming Kubernetes service mesh; implemented fault-tolerant API clients with retry logic, circuit breakers, and graceful error handling}
+        \resumeItem{Designed scalable system orchestration features (boot/shutdown, firmware updates) handling 10,000+ node clusters with optimized parallel processing}
+        \resumeItem{Achieved 85\%+ test coverage through TDD; owned code reviews, design docs, and operational excellence for the team}
+        \resumeItem{Led Agile ceremonies and mentored 2 engineers; drove technical decisions with strong ownership and bias for action}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Development Engineer Intern}{Feb 2023 -- Aug 2023}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Developed backend features for distributed system management platform; built REST API clients with pagination, retry logic, and error handling}
+        \resumeItem{Implemented CI/CD pipelines reducing deployment time; owned feature delivery from design to production}
+        \resumeItem{Contributed to open-source codebase; wrote comprehensive unit and integration tests}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{System Admin Toolkit (SAT)} $|$ \emph{Python, REST APIs, Distributed Systems, Docker}}{Open Source}
+          \resumeItemListStart
+            \resumeItem{Scalable orchestration platform for 10,000+ node clusters; features include parallel boot/shutdown, firmware management, configuration sync}
+            \resumeItem{Top 3 contributor (1,600+ commits): \href{https://github.com/Cray-HPE/sat}{github.com/Cray-HPE/sat}}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hardware Triage Tool (HTT)} $|$ \emph{Python, REST APIs, Distributed Diagnostics}}{Internal}
+          \resumeItemListStart
+            \resumeItem{Automated diagnostic service for large-scale infrastructure; 15+ failure scenarios across 11 hardware platforms}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Predictive Maintenance System} $|$ \emph{Python, Scikit-learn, Data Pipelines}}{ML Project}
+          \resumeItemListStart
+            \resumeItem{ML model predicting equipment failures with 92\% accuracy; processed sensor data at scale for proactive maintenance}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at Austin}{2025 -- 2026}
+      {Post Graduate Program in Data Science}{}
+    \resumeSubheading
+      {JSS Science and Technology University}{2019 -- 2023}
+      {Bachelor of Engineering in Computer Science}{CGPA: 9.25/10}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java (familiar), SQL, Bash/Shell Scripting} \\
+     \textbf{Backend \& APIs}{: REST APIs, Microservices, Distributed Systems, Service-Oriented Architecture} \\
+     \textbf{Infrastructure}{: Docker, Kubernetes, AWS (EC2, S3), Jenkins, Git, Linux/Unix, CI/CD} \\
+     \textbf{Practices}{: System Design, TDD, Code Reviews, Agile/Scrum, Ownership, Operational Excellence}
+    }}
+ \end{itemize}
+
+\end{document}

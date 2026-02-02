@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===========================
-// Contact Form Handler
+// Contact Form Handler (Formspree - works on any host)
 // ===========================
 const contactForm = document.getElementById('contactForm');
 
@@ -92,27 +92,43 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Here you would typically send the form data to a backend service
-        // For now, we'll just show a success message
+        const form = e.target;
+        const formData = new FormData(form);
+        const status = document.getElementById('form-status');
+        const submitBtn = form.querySelector('button[type="submit"]');
         
-        // Create mailto link as a fallback
-        const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:1203annapoorna@gmail.com?subject=${subject}&body=${body}`;
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
         
-        // Show success message
-        alert('Thank you for your message! Your default email client should open. If not, please email me directly at 1203annapoorna@gmail.com');
-        
-        // Open mailto link
-        window.location.href = mailtoLink;
-        
-        // Reset form
-        contactForm.reset();
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                status.style.display = 'block';
+                status.style.color = '#10b981';
+                status.textContent = '✓ Thank you! Your message has been sent successfully.';
+                form.reset();
+            } else {
+                return response.json().then(data => {
+                    throw new Error(data.error || 'Form submission failed');
+                });
+            }
+        })
+        .catch(error => {
+            status.style.display = 'block';
+            status.style.color = '#ef4444';
+            status.textContent = '✗ Oops! Something went wrong. Please email me directly at 1203annapoorna@gmail.com';
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
     });
 }
 

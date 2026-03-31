@@ -1,0 +1,156 @@
+%-------------------------
+% ATS-Friendly Resume in LaTeX
+% Author: Annapoorna S
+%-------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins - tighter for one page
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting - tighter spacing
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-3pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+%-------------------------------------------
+%  RESUME STARTS HERE
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Annapoorna S} \\ \vspace{2pt}
+    \small +91-7483893047 $|$ \href{mailto:1203annapoorna@gmail.com}{1203annapoorna@gmail.com} $|$
+    \href{https://www.linkedin.com/in/annapoorna-s-a18b371a5/}{LinkedIn} $|$
+    \href{https://github.com/annapoorna-mygit}{GitHub} $|$
+    \href{https://eloquent-cobbler-b0fb87.netlify.app/?utm_source=resume&utm_medium=pdf&utm_campaign=job_search}{Portfolio} $|$
+    Bengaluru, India
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{AI \& Systems Engineer with 3+ years at Hewlett Packard Enterprise building production software for the world's largest supercomputers. Combines deep backend engineering expertise (Python, distributed systems, Kubernetes) with applied AI/ML skills (LLM integration, predictive modeling, data pipelines). Top 3 open-source contributor to HPE's flagship cluster management platform (1,600+ commits). Post Graduate in Data Science from UT Austin (GPA: 4.26/4.44). Ships full-stack AI products end-to-end — from data ingestion to LLM-powered interfaces.}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {HPC/AI Systems Software Engineer}{Sep 2023 -- Present}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Own end-to-end design and delivery of \textbf{System Admin Toolkit (SAT)}, the primary CLI platform for administering exascale HPC/AI clusters — used across national labs and enterprise deployments worldwide}
+        \resumeItem{Architected fault-tolerant backend services integrating 15+ Kubernetes microservices via REST APIs; implemented retry logic, circuit breakers, and graceful degradation for distributed orchestration at 10,000+ node scale}
+        \resumeItem{Built \textbf{Hardware Triage Tool (HTT)}, an automated diagnostic engine covering 15+ failure categories across 11 hardware platforms — reduced mean-time-to-resolution by replacing manual debug with structured workflows}
+        \resumeItem{Delivered 2 major enterprise releases (HPE CSM v1.6.x, v1.7.x); maintained 85\%+ test coverage through TDD, led code reviews, and mentored junior engineers on system design and best practices}
+        \resumeItem{Integrated automated ticketing and remediation pipelines, turning reactive hardware troubleshooting into proactive, data-driven incident management}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {R\&D Software Engineer Intern}{Feb 2023 -- Aug 2023}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Shipped production features for distributed cluster management platform; built REST API clients, CI/CD pipelines (Jenkins, Git), and comprehensive test suites}
+        \resumeItem{Contributed to open-source SAT codebase from day one; ramped up to independent feature delivery within 3 months}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{SAP O2C Graph Explorer} $|$ \emph{FastAPI, React/TypeScript, PostgreSQL, LLM (Llama 3.3), Cytoscape.js}}{\href{https://sap-o2-c-graph-explorer-63lx.vercel.app}{Live Demo}}
+          \resumeItemListStart
+            \resumeItem{Full-stack AI application that ingests 19 SAP entity types, models the Order-to-Cash flow as an interactive graph, and answers natural-language business questions via an LLM chat interface backed by live SQL execution}
+            \resumeItem{Engineered LLM guardrails to constrain responses to dataset-relevant queries; deployed on Vercel + Render + Neon (PostgreSQL) with Docker containerization}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{System Admin Toolkit (SAT)} $|$ \emph{Python, REST APIs, Kubernetes, Docker, Open Source}}{\href{https://github.com/Cray-HPE/sat}{GitHub — 1,600+ commits}}
+          \resumeItemListStart
+            \resumeItem{Production CLI platform consuming 15+ K8s microservices for boot/shutdown orchestration, firmware management, and configuration sync across the world's largest supercomputers}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Predictive Maintenance — Engine Failure} $|$ \emph{Python, Scikit-learn, XGBoost, ML Pipelines}}{ML Project}
+          \resumeItemListStart
+            \resumeItem{End-to-end ML pipeline achieving 92\% accuracy (ROC-AUC: 0.94) predicting engine failures from sensor data; feature engineering, Random Forest, XGBoost with GridSearchCV hyperparameter tuning}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{EasyVisa — US Visa Certification Predictor} $|$ \emph{XGBoost, Ensemble Methods, SMOTE}}{ML Project}
+          \resumeItemListStart
+            \resumeItem{Ensemble model predicting visa approval with 89\% accuracy (AUC-ROC: 0.92); identified key decision factors via feature importance analysis on imbalanced datasets}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at Austin}{2025 -- 2026}
+      {Post Graduate Program in Data Science \& AI}{GPA: 4.26 / 4.44}
+    \resumeSubheading
+      {JSS Science and Technology University (SJCE)}{2019 -- 2023}
+      {Bachelor of Engineering in Computer Science}{CGPA: 9.25 / 10}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python (advanced), SQL, Bash/Shell, C/C++, TypeScript, Java} \\
+     \textbf{AI/ML}{: Scikit-learn, XGBoost, Pandas, NumPy, LLM Integration (Llama, Groq), NLP, Feature Engineering, ML Pipelines} \\
+     \textbf{Backend \& Data}{: FastAPI, REST APIs, PostgreSQL, Microservices, Distributed Systems, Real-time Data Pipelines} \\
+     \textbf{Frontend}{: React, TypeScript, Cytoscape.js, Vite} \\
+     \textbf{Infrastructure}{: Docker, Kubernetes, Linux/Unix, Jenkins CI/CD, Git, Vercel, Render, Neon} \\
+     \textbf{Practices}{: System Design, TDD, Code Reviews, Technical Documentation, Agile/Scrum, Open Source}
+    }}
+ \end{itemize}
+
+\end{document}

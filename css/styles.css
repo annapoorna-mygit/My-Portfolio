@@ -854,3 +854,15 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===========================
+   Resume Download Button
+   =========================== */
+#resumeBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}

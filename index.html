@@ -66,6 +66,9 @@
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <button class="btn btn-secondary" id="resumeBtn" onclick="document.getElementById('resumeModal').style.display='flex'">
+                        <i class="fas fa-file-download"></i> Download Resume
+                    </button>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/annapoorna-mygit" target="_blank" aria-label="GitHub">
@@ -287,6 +290,36 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 
+                <!-- Project: SAP O2C Graph Explorer -->
+                <div class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>SAP O2C Graph Explorer</h3>
+                    <p>
+                        Full-stack AI application that ingests 19 SAP Order-to-Cash entity types into PostgreSQL,
+                        models the entire O2C flow as an interactive graph, and answers natural-language business
+                        questions via an LLM chat interface (Llama 3.3 70B) backed by live SQL execution with
+                        guardrails to constrain responses to dataset-relevant queries.
+                    </p>
+                    <div class="project-tags">
+                        <span>FastAPI</span>
+                        <span>React/TypeScript</span>
+                        <span>PostgreSQL</span>
+                        <span>LLM (Llama 3.3)</span>
+                        <span>Cytoscape.js</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sap-o2-c-graph-explorer-63lx.vercel.app" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/annapoorna-mygit/SAP-O2C-Graph-Explorer" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Project 1: System Admin Toolkit (SAT) -->
                 <div class="project-card featured">
                     <div class="project-icon">
@@ -606,6 +639,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Resume Download Modal -->
+    <div id="resumeModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:var(--dark-secondary); border-radius:12px; padding:2.5rem; max-width:420px; width:90%; position:relative; border:1px solid rgba(255,255,255,0.1);">
+            <button onclick="document.getElementById('resumeModal').style.display='none'" style="position:absolute; top:12px; right:16px; background:none; border:none; color:var(--text-muted); font-size:1.5rem; cursor:pointer;">&times;</button>
+            <h3 style="color:var(--text-primary); margin-bottom:0.5rem;"><i class="fas fa-file-pdf" style="color:var(--primary-color);"></i> Get My Resume</h3>
+            <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">Enter your email and I'll send you the latest version. You'll also get the download link instantly.</p>
+            <form id="resumeForm" action="https://formspree.io/f/mgozzbwp" method="POST">
+                <input type="hidden" name="_subject" value="Resume Download Request">
+                <input type="hidden" name="source" value="resume_download">
+                <div style="margin-bottom:1rem;">
+                    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.1); background:var(--dark-bg); color:var(--text-primary); font-size:1rem; box-sizing:border-box;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.1); background:var(--dark-bg); color:var(--text-primary); font-size:1rem; box-sizing:border-box;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; text-align:center; border:none; cursor:pointer; font-size:1rem;">Download Resume</button>
+                <p id="resume-form-status" style="margin-top:1rem; display:none; text-align:center;"></p>
+            </form>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

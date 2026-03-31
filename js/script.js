@@ -84,6 +84,65 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===========================
+// Resume Download Form Handler
+// ===========================
+const resumeForm = document.getElementById('resumeForm');
+if (resumeForm) {
+    resumeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const status = document.getElementById('resume-form-status');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                status.style.display = 'block';
+                status.style.color = '#10b981';
+                status.textContent = '✓ Thanks! Your download will start now.';
+                form.reset();
+                // Trigger the actual PDF download after a short delay
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = 'resume/Annapoorna_S_Resume.pdf';
+                    link.download = 'Annapoorna_S_Resume.pdf';
+                    link.click();
+                }, 1000);
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(error => {
+            status.style.display = 'block';
+            status.style.color = '#ef4444';
+            status.textContent = '✗ Something went wrong. Please email me at 1203annapoorna@gmail.com';
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Download Resume';
+        });
+    });
+}
+
+// Close resume modal when clicking outside
+const resumeModal = document.getElementById('resumeModal');
+if (resumeModal) {
+    resumeModal.addEventListener('click', function(e) {
+        if (e.target === resumeModal) {
+            resumeModal.style.display = 'none';
+        }
+    });
+}
+
+// ===========================
 // Contact Form Handler (Formspree - works on any host)
 // ===========================
 const contactForm = document.getElementById('contactForm');

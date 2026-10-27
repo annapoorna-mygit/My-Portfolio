@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NGSM infrastructure inventory by Annapoorna S: unified compute-node and Aruba management-switch collection, CLI/API workflows, CMDB events, and batched execution.">
+    <title>NGSM Infrastructure Inventory - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
+        .project-header { text-align: center; margin-bottom: 50px; }
+        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-header p { color: var(--text-secondary); font-size: 1.1rem; }
+        .project-content { max-width: 900px; margin: 0 auto; }
+        .project-section { padding: 0; margin-bottom: 3rem; }
+        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+        .project-section p, .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .project-section ul { margin-left: 2rem; }
+        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
+        .back-button:hover { gap: 0.8rem; }
+        .highlight-box { background: var(--dark-secondary); border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+    </style>
+</head>
+<body>
+    <main class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <header class="project-header">
+                <h1>NGSM Infrastructure Inventory</h1>
+                <p>Unified Compute-Node &amp; Management-Switch Collection @ HPE</p>
+            </header>
+            <div class="project-content">
+                <section class="project-section">
+                    <h2>Project Overview</h2>
+                    <p>
+                        Infrastructure inventory needs to describe both compute nodes and the management
+                        switches that connect them. A node-only collection model makes it difficult to
+                        select, collect, and report on those different device types through one workflow.
+                        I built a Python inventory service and extended its node collection with Aruba
+                        management-switch support, carrying that model through the CLI, API, collection,
+                        and query layers.
+                    </p>
+                    <div class="highlight-box">
+                        <strong>My Role:</strong> End-to-end implementation and validation of inventory
+                        workflows, from device collection and CMDB-driven events to operator-facing
+                        results, with QE coordination and peer guidance.
+                    </div>
+                </section>
+                <section class="project-section">
+                    <h2>One Collection Model for Nodes &amp; Switches</h2>
+                    <p>
+                        Adding switches meant more than adding a collector. The surrounding services
+                        also needed to stop assuming every collection target was a node.
+                    </p>
+                    <ul>
+                        <li><strong>Aruba Collection:</strong> Implemented a management-switch collector and parsers alongside the existing node collectors</li>
+                        <li><strong>Mixed-Target Selection:</strong> Extended CLI and API target selection so a collection can include nodes, switches, or both</li>
+                        <li><strong>Collection &amp; Query Services:</strong> Carried mixed-target support through collection execution and inventory queries, rather than creating an isolated switch-only path</li>
+                        <li><strong>Target-Based Results:</strong> Generalized totals and failure reporting from node-specific fields to a common target model, with corresponding CLI output and tests</li>
+                    </ul>
+                </section>
+                <section class="project-section">
+                    <h2>Event-Driven Inventory Workflows</h2>
+                    <p>
+                        Collection is part of an ongoing inventory lifecycle. I own CMDB-driven handling
+                        for add, delete, and modify events, connecting infrastructure changes to inventory
+                        jobs and a configuration management database (CMDB).
+                    </p>
+                    <ul>
+                        <li>Implemented asynchronous inventory-to-CMDB posting</li>
+                        <li>Handled single- and multi-node events and corrected automatic inventory-job creation</li>
+                        <li>Worked with QE on test scenarios and integration validation across the inventory workflow</li>
+                    </ul>
+                </section>
+                <section class="project-section">
+                    <h2>Efficient Execution, Consistent Operator Experience</h2>
+                    <p>
+                        I improved the node-collection execution path while keeping compatibility and
+                        unavailable nodes in view. The same attention to unnecessary work applies to
+                        the CLI that operators use to inspect collections.
+                    </p>
+                    <ul>
+                        <li><strong>Batched Node Collection:</strong> Migrated remote execution to ClusterShell batching, with node-availability checks and a PDSH fallback</li>
+                        <li><strong>Leaner CLI Requests:</strong> Removed a redundant log-summary lookup from collection-details output, saving one API call per invocation</li>
+                        <li><strong>Tested Output:</strong> Updated collection-command and detail-command tests to reflect target-based results and the simplified output</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>What This Enables:</strong> A shared collection and query workflow for
+                        compute and management-network inventory, with totals and failures reported
+                        consistently for either device type.
+                    </div>
+                </section>
+                <section class="project-section">
+                    <h2>Technologies &amp; Tools</h2>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>AsyncIO</span>
+                        <span>Aruba Switches</span>
+                        <span>CLI/API Design</span>
+                        <span>CMDB</span>
+                        <span>ClusterShell</span>
+                        <span>PDSH</span>
+                        <span>SSH</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

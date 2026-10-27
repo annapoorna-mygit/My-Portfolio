@@ -50,7 +50,7 @@
                     <span class="proprietary-badge"><i class="fas fa-lock"></i> Internal</span>
                 </h1>
                 <p style="color: var(--text-secondary); font-size: 1.1rem;">
-                    Automated Hardware Failure Diagnosis & Remediation System @ HPE
+                    Workflow-Based Hardware Diagnostics &amp; Repair Guidance @ HPE
                 </p>
             </div>
 
@@ -58,10 +58,11 @@
                 <div class="project-section">
                     <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
                     <p>
-                        The Hardware Triage Tool (HTT) is an automated diagnostic CLI tool that helps diagnose 
-                        various node hardware failures in large-scale HPC clusters and provides recommended actions 
-                        for each scenario. System administrators can quickly identify failure root causes and take 
-                        corrective actions, reducing manual triage time from hours to minutes.
+                        Hardware failure diagnosis often means piecing together logs, platform-specific checks,
+                        and repair procedures. I built HTT to turn that process into repeatable CLI workflows
+                        that identify node failures and recommend corrective actions. I also helped evolve
+                        the tool into a plugin-based architecture, so new diagnostics can reuse matching
+                        and command-evaluation logic rather than rely on a separate script for every check.
                     </p>
                     
                     <div class="highlight-box">
@@ -70,12 +71,11 @@
                         <strong>6 major failure scenarios</strong>, and generates structured JSON output for 
                         downstream automation.
                     </div>
-                    </div>
                     
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="number">64+</div>
-                            <div class="label">Commits</div>
+                            <div class="number">YAML</div>
+                            <div class="label">Configurable Workflows</div>
                         </div>
                         <div class="stat-card">
                             <div class="number">6</div>
@@ -103,16 +103,21 @@
 
                 <div class="project-section">
                     <h2><i class="fas fa-tasks"></i> My Key Contributions</h2>
-                    <p>Key modules and features I developed:</p>
+                    <p>I built the diagnostic foundation and extended it into an operator-focused workflow:</p>
                     <ul>
-                        <li><strong>Structured JSON Triage Output:</strong> Designed <code>triage_output.json</code> with key-value repair actions for automated processing</li>
-                        <li><strong>Logging Framework:</strong> Built <code>triage_logger_util.py</code> - custom logging utility for consistent, structured logging</li>
-                        <li><strong>Stage-Specific Repair Actions:</strong> Developed workflow system for stage-specific repair recommendations</li>
-                        <li><strong>Power Rail Error Handling:</strong> Separated powerrail errors into dedicated key for better diagnostics</li>
-                        <li><strong>Global Version Tracking:</strong> Implemented HTT version tracking system</li>
-                        <li><strong>Blancapeak (EX254n) Support:</strong> Added complete hardware support with repair actions</li>
-                        <li><strong>RAS Poison Error Detection:</strong> Implemented detection and repair actions for RAS poison errors</li>
-                        <li><strong>Graceful Error Handling:</strong> Built robust error handling for missing scripts and timeouts</li>
+                        <li><strong>Structured Results &amp; Logging:</strong> Designed and standardized JSON triage output with repair actions, supported by a shared logging framework and version tracking</li>
+                        <li><strong>Actionable Diagnosis:</strong> Built stage-specific repair recommendations for EFI, power-rail, PMBus, thermal-trip, SIVOC I/O-fault, machine-check, and RAS poison errors</li>
+                        <li><strong>Platform Support:</strong> Added EX254n diagnostics and repair actions within a shared framework supporting EX and XD hardware workflows</li>
+                        <li><strong>Defensive Execution:</strong> Added early hardware-support checks, missing repair-data handling, timeout handling, and hardware-configuration path fixes</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-vial"></i> Reliability &amp; Engineering Quality</h2>
+                    <ul>
+                        <li><strong>Regression Testing:</strong> Added <code>search_pattern</code> unit tests, reviewed test plans, and worked with QE on error simulation and validation</li>
+                        <li><strong>Build &amp; Release:</strong> Restored shippable builds through Jenkins shared-runner and RPM configuration fixes, supporting HPCM 1.15/1.16 delivery</li>
+                        <li><strong>Maintainability:</strong> Wrote plugin configuration guides, examples, and troubleshooting documentation, and mentored peers on testing the workflows</li>
                     </ul>
                 </div>
 
@@ -133,8 +138,15 @@
 
                 <div class="project-section">
                     <h2><i class="fas fa-cogs"></i> Technical Architecture</h2>
+
+                    <p><strong>Reusable Diagnostic Plugins:</strong></p>
+                    <ul>
+                        <li><code>search_pattern</code> supports YAML-configured multi-pattern matching and variable extraction</li>
+                        <li><code>exec_statement</code> evaluates command output as part of the diagnostic workflow</li>
+                        <li>Shared matching logic serves EX/XD workflows while hardware-specific checks remain in platform configurations</li>
+                    </ul>
                     
-                    <p><strong>YAML-Based Workflow Engine:</strong></p>
+                    <p style="margin-top: 1.5rem;"><strong>YAML-Based Workflow Engine:</strong></p>
                     <ul>
                         <li>Customizable workflow definitions for each hardware platform and node state</li>
                         <li>Separate workflows for ON and OFF node conditions</li>
@@ -233,8 +245,7 @@
                         <li><strong>Hours → Minutes:</strong> Reduced manual triage time through automated workflow-based diagnosis</li>
                         <li><strong>6 Major Scenarios:</strong> Comprehensive detection of power, boot, health, and stability issues</li>
                         <li><strong>11+ Platforms:</strong> Support for both EX and XD blade families</li>
-                        <li><strong>Extensible Design:</strong> YAML-based configs allow easy addition of new hardware/workflows</li>
-                        <li><strong>Custom Scripts:</strong> Framework for extending detection capabilities</li>
+                        <li><strong>Extensible Design:</strong> YAML-configured plugins reuse matching and command-evaluation logic across hardware workflows</li>
                         <li><strong>Structured Output:</strong> JSON-based triage output enabling downstream automation</li>
                     </ul>
                 </div>

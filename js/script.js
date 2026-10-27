@@ -123,7 +123,7 @@ if (resumeForm) {
         .catch(error => {
             status.style.display = 'block';
             status.style.color = '#ef4444';
-            status.textContent = '✗ Something went wrong. Please email me at 1203annapoorna@gmail.com';
+            status.textContent = '✗ Something went wrong. Please email me at annapoorna.placements@gmail.com';
         })
         .finally(() => {
             submitBtn.disabled = false;
@@ -182,7 +182,7 @@ if (contactForm) {
         .catch(error => {
             status.style.display = 'block';
             status.style.color = '#ef4444';
-            status.textContent = '✗ Oops! Something went wrong. Please email me directly at 1203annapoorna@gmail.com';
+            status.textContent = '✗ Oops! Something went wrong. Please email me directly at annapoorna.placements@gmail.com';
         })
         .finally(() => {
             submitBtn.disabled = false;

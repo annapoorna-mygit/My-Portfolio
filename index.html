@@ -6,7 +6,7 @@
     <meta name="description" content="Annapoorna S - HPC/AI Systems Software Engineer at HPE with 3+ years experience in distributed systems, Python development, and data science">
     <title>Annapoorna S - Portfolio</title>
 
-    <!-- Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <!-- Google Analytics 4: Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQT6TWCS8X"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,7 +15,7 @@
       gtag('config', 'G-YQT6TWCS8X');
     </script>
 
-    <!-- Microsoft Clarity — Replace XXXXXXXXXX with your Project ID from clarity.microsoft.com -->
+    <!-- Microsoft Clarity: Replace XXXXXXXXXX with your Project ID from clarity.microsoft.com -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -41,6 +41,7 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -58,10 +59,10 @@
                 <h1 class="hero-title">Hi, I'm <span class="highlight">Annapoorna S</span></h1>
                 <p class="hero-subtitle">HPC/AI Systems Software Engineer @ HPE</p>
                 <p class="hero-description">
-                    I build production-grade tools that keep some of the world's largest clusters fast, 
-                    reliable, and easy to operate. I replace error-prone manual steps with fully automated 
-                    workflows — my sweet spot lies where distributed systems, reliability engineering,
-                    automation, and data science meet.
+                    I design and deliver production-grade backend systems for large-scale HPC and AI
+                    infrastructure. At HPE, I lead cluster-management tooling and build distributed
+                    inventory and hardware-diagnostic systems, combining Python expertise, secure
+                    engineering, and end-to-end ownership to turn complex operations into reliable automation.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -77,7 +78,7 @@
                     <a href="https://www.linkedin.com/in/annapoorna-s-a18b371a5/" target="_blank" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="mailto:1203annapoorna@gmail.com" aria-label="Email">
+                    <a href="mailto:annapoorna.placements@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -98,27 +99,27 @@
                         reliability engineering.
                     </p>
                     <p>
-                        At HPE, I lead the development of the System Admin Toolkit (SAT), a critical production 
-                        system that administers exascale computing environments. I also built the Hardware Triage 
-                        Tool (HTT) for automated failure detection and remediation. Beyond my systems engineering 
-                        work, I'm expanding my expertise in data science and machine learning through the University 
-                        of Texas at Austin program, combining my software engineering skills with advanced analytics.
+                        At HPE, I lead the development of the System Admin Toolkit (SAT), built the Hardware
+                        Triage Tool (HTT), and own inventory workflows for compute nodes and management switches.
+                        These tools help administrators understand their infrastructure, diagnose failures, and
+                        manage clusters through repeatable automation. I take that work from design through
+                        testing and release, combining hands-on engineering with QE collaboration and peer mentoring.
                     </p>
                     <div class="about-highlights">
                         <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <h3>Clean Code</h3>
-                            <p>Writing maintainable and efficient code</p>
+                            <i class="fas fa-check-circle"></i>
+                            <h3>End-to-End Ownership</h3>
+                            <p>Implementation, integration, testing, and release readiness</p>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-brain"></i>
-                            <h3>Problem Solver</h3>
-                            <p>Analytical thinking and innovation</p>
+                            <h3>Systems Problem-Solving</h3>
+                            <p>Reusable diagnostics and unified node-and-switch inventory</p>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Data-Driven</h3>
-                            <p>Evidence-based decision making</p>
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Secure Engineering</h3>
+                            <p>Vulnerability remediation and a top-three secure-coding tournament finish</p>
                         </div>
                     </div>
                 </div>
@@ -142,13 +143,11 @@
                             <i class="fas fa-calendar"></i> Sep 2023 – Present | Bengaluru, India
                         </p>
                         <ul class="responsibilities">
-                            <li>Lead design, development, and ownership of <strong>System Admin Toolkit (SAT)</strong>, a Python-based production system administering large-scale HPC and exascale clusters</li>
-                            <li>Own SAT components end-to-end including architecture, feature design, implementation, testing, code reviews, and production support</li>
-                            <li>Design scalable backend automation and orchestration workflows for distributed systems</li>
-                            <li>Developed <strong>Hardware Triage Tool (HTT)</strong> for detecting node-level hardware failures using Python, YAML, and shell scripting</li>
-                            <li>Integrated HTT with enterprise ticketing systems for automated failure tracking and remediation</li>
-                            <li>Analyze system failures and implement fault-tolerant mechanisms to improve reliability</li>
-                            <li>Delivered multiple enterprise releases: <strong>HPE CSM v1.6.x and v1.7.x</strong></li>
+                            <li>Lead design and delivery of <strong>System Admin Toolkit (SAT)</strong>, turning complex cluster-management APIs into reliable Python CLI workflows for boot, firmware, configuration, and diagnostics</li>
+                            <li>Built <strong>Hardware Triage Tool (HTT)</strong> and helped evolve it into a modular diagnostic engine, combining reusable YAML-driven plugins, structured JSON results, and actionable repair recommendations across EX/XD hardware</li>
+                            <li>Develop <strong>NGSM infrastructure inventory</strong> across compute nodes and Aruba management switches, with unified CLI/API targeting, collection and query workflows, and consistent target-based results</li>
+                            <li>Own <strong>CMDB-driven inventory automation</strong> for add, delete, and modify events, with asynchronous posting and ClusterShell-based node collection that batches SSH work while retaining availability checks and a PDSH fallback</li>
+                            <li>Carry features through <strong>secure, tested releases</strong>: remediate dependency vulnerabilities, maintain Jenkins/RPM builds, coordinate QE validation, and mentor peers on testing and troubleshooting</li>
                         </ul>
                     </div>
                 </div>
@@ -327,10 +326,9 @@
                     </div>
                     <h3>System Admin Toolkit (SAT)</h3>
                     <p>
-                        Python-based CLI suite that transforms complex JSON REST APIs into human-friendly commands 
-                        for administering the world's largest supercomputers. As a top contributor, I develop 
-                        features for boot-image management, node configuration, and system diagnostics — turning 
-                        hours of manual API work into single commands for HPC administrators worldwide.
+                        A Python CLI that makes complex cluster-management APIs accessible to HPC administrators.
+                        I lead development of workflows for boot images, firmware, node configuration, and
+                        diagnostics, combining operational automation with dependency security and automated testing.
                     </p>
                     <div class="project-tags">
                         <span>Python</span>
@@ -356,9 +354,10 @@
                     </div>
                     <h3>Hardware Triage Tool (HTT)</h3>
                     <p>
-                        Automated diagnostic system that detects 15+ failure categories across 11+ hardware 
-                        platforms using Redfish APIs and custom workflows. I built the JSON triage output 
-                        system, logging framework, and automated Trac ticket integration.
+                        A diagnostic engine I built to turn hardware failures into structured findings and
+                        repair recommendations. YAML-driven workflows, reusable matching plugins, and Redfish
+                        integration support diagnosis across EX/XD platforms without a separate custom script
+                        for every check.
                     </p>
                     <div class="project-tags">
                         <span>Python</span>
@@ -369,6 +368,58 @@
                     </div>
                     <div class="project-links">
                         <a href="projects/htt.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>NGSM Infrastructure Inventory</h3>
+                    <p>
+                        One inventory workflow for compute nodes and Aruba management switches. I built
+                        mixed-target collection and query support through a shared CLI/API, with consistent
+                        results for both device types. CMDB event handling and batched node collection
+                        connect discovery with ongoing infrastructure changes.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Aruba Switches</span>
+                        <span>CMDB</span>
+                        <span>ClusterShell</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/ngsm-inventory.html" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: ThermoRL -->
+                <div class="project-card featured">
+                    <div class="project-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3>ThermoRL</h3>
+                    <p>
+                        Research prototype for a reinforcement-learning scheduler that co-optimizes workload
+                        placement across heterogeneous cooling zones (air, liquid, immersion) by jointly minimizing
+                        carbon emissions and thermal stress. In a 50 MW digital-twin simulation, it achieved 73%
+                        fewer thermal violations and 18% cooling energy savings.
+                    </p>
+                    <div class="project-tags">
+                        <span>Reinforcement Learning</span>
+                        <span>PPO</span>
+                        <span>Python</span>
+                        <span>Gymnasium</span>
+                        <span>Digital Twin</span>
+                        <span>Sustainability</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/thermorl.html" class="project-link">
                             <i class="fas fa-external-link-alt"></i> View Details
                         </a>
                     </div>
@@ -564,6 +615,34 @@
         </div>
     </section>
 
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Top 3 in Secure Coding</h3>
+                    <p>
+                        Placed in the top three in HPE's internal secure-coding tournament,
+                        complementing hands-on vulnerability analysis and remediation work.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Engineering Development</h3>
+                    <p>
+                        Completed the EDG programme and continued developing skills in
+                        Python, AI, and system design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -580,7 +659,7 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <a href="mailto:1203annapoorna@gmail.com">1203annapoorna@gmail.com</a>
+                                <a href="mailto:annapoorna.placements@gmail.com">annapoorna.placements@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -635,6 +714,7 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>

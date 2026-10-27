@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThermoRL - Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail { padding: 100px 0 80px; min-height: 100vh; }
+        .project-header { text-align: center; margin-bottom: 50px; }
+        .project-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-content { max-width: 900px; margin: 0 auto; }
+        .project-section { margin-bottom: 3rem; }
+        .project-section h2 { color: var(--primary-color); margin-bottom: 1rem; }
+        .project-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .project-section ul { color: var(--text-secondary); line-height: 1.8; margin-left: 2rem; }
+        .back-button { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; }
+        .back-button:hover { gap: 0.8rem; }
+        .highlight-box { background: var(--dark-secondary); border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .stat-card { background: var(--dark-secondary); padding: 1.25rem; border-radius: 8px; text-align: center; }
+        .stat-card .number { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
+        .stat-card .label { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+        .proprietary-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-left: 1rem; }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .tech-table th, .tech-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--dark-secondary); }
+        .tech-table th { color: var(--primary-color); font-weight: 600; width: 30%; }
+        .tech-table td { color: var(--text-secondary); }
+        .component-list { list-style: none; margin-left: 0; }
+        .component-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--dark-secondary); display: flex; align-items: flex-start; gap: 0.75rem; }
+        .component-list li:last-child { border-bottom: none; }
+        .component-icon { color: var(--primary-color); min-width: 20px; }
+        .tag { display: inline-block; background: var(--dark-secondary); color: var(--text-secondary); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.8rem; margin: 0.25rem; }
+    </style>
+</head>
+<body>
+    <div class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+
+            <div class="project-header">
+                <h1>
+                    ThermoRL
+                    <span class="proprietary-badge"><i class="fas fa-lock"></i> Internal</span>
+                </h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    Reinforcement Learning for Thermal-Aware Workload Scheduling in Heterogeneous Data Centers @ HPE
+                </p>
+            </div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                    <p>
+                        ThermoRL is a reinforcement-learning scheduler that co-optimizes compute placement across
+                        heterogeneous cooling zones (air-cooled, direct-to-chip liquid, and single-phase immersion)
+                        by jointly minimizing carbon emissions and thermal stress. It introduces the Thermal Headroom
+                        Index (THI), a unified, zone-agnostic metric, and formulates scheduling as a
+                        Constrained Markov Decision Process solved via Lagrangian-relaxed Proximal Policy Optimization.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>Impact:</strong> Simulation on a digital-twin environment modeling a 50 MW AI campus
+                        demonstrates <strong>73% reduction</strong> in thermal limit violations,
+                        <strong>18% cooling energy savings</strong>, and <strong>12% carbon reduction</strong> versus
+                        carbon-aware-only baselines, without degrading job completion time.
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">73%</div>
+                        <div class="label">Fewer Thermal Violations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">18%</div>
+                        <div class="label">Cooling Energy Savings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">12%</div>
+                        <div class="label">Carbon Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">50 MW</div>
+                        <div class="label">Simulated AI Campus</div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Problem Statement</h2>
+                    <p>
+                        AI training workloads impose extreme, dynamic thermal loads on data center infrastructure.
+                        A single NVIDIA GB200 NVL72 rack dissipates 120 kW with pulsed thermal transients at
+                        10&ndash;100ms timescales during synchronized gradient updates. Current carbon-aware schedulers
+                        optimize placement based on grid carbon intensity but assume infinite cooling headroom. When
+                        cooling capacity is exceeded, emergency responses (fan ramp-up, chiller boost) consume
+                        30&ndash;40% more energy, negating carbon savings.
+                    </p>
+                    <ul>
+                        <li><strong>Immersion tanks:</strong> High thermal inertia but face dielectric fluid degradation above 50&deg;C</li>
+                        <li><strong>Direct-to-chip cold plates:</strong> Rapid response but vulnerable to pump cavitation under fluctuating loads</li>
+                        <li><strong>Air-cooled zones:</strong> Cannot absorb sudden density spikes without exceeding ASHRAE limits (27&deg;C)</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-cogs"></i> Solution Architecture</h2>
+                    <p>ThermoRL introduces a closed-loop scheduling architecture with three core components:</p>
+                    <ul class="component-list">
+                        <li>
+                            <span class="component-icon"><i class="fas fa-thermometer-half"></i></span>
+                            <div><strong>Thermal Headroom Index (THI):</strong> Unified, zone-agnostic scalar combining temperature, heat-load ratio, and degradation state. THI = 1 means full headroom; THI &rarr; 0 means approaching thermal limits.</div>
+                        </li>
+                        <li>
+                            <span class="component-icon"><i class="fas fa-brain"></i></span>
+                            <div><strong>Lagrangian PPO Agent:</strong> Constrained MDP with 4 actions (assign, migrate, throttle, defer). Reward co-optimizes carbon, cooling energy, and throughput. THI &ge; 0.1 enforced via dual gradient ascent.</div>
+                        </li>
+                        <li>
+                            <span class="component-icon"><i class="fas fa-server"></i></span>
+                            <div><strong>Digital Twin Simulator:</strong> Gymnasium-compatible environment modeling 3 cooling zones with calibrated thermal RC dynamics. Power profiles from Alibaba GPU traces; carbon signals from electricityMap.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-hand-pointer"></i> My Key Contributions</h2>
+                    <ul>
+                        <li>Contributed to the design of the ThermoRL framework and THI metric</li>
+                        <li>Designed and implemented the Gymnasium-compatible digital-twin simulation environment</li>
+                        <li>Built the Lagrangian PPO training pipeline (converges in ~4 hours on single A100 GPU)</li>
+                        <li>Implemented the THI computation module as a standalone Python library</li>
+                        <li>Ran simulation experiments against 4 baselines (Round-Robin, Carbon-Only, Threshold-Reactive, LP Oracle)</li>
+                        <li>Designed the integration path with HPE GreenLake via HPCM and CSM platforms</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-chart-line"></i> Results vs. Baselines</h2>
+                    <table class="tech-table">
+                        <tr>
+                            <th>Metric</th>
+                            <th>ThermoRL vs Carbon-Only</th>
+                        </tr>
+                        <tr>
+                            <td>Thermal Limit Violations</td>
+                            <td>73% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Cooling Energy Overhead</td>
+                            <td>18% decrease</td>
+                        </tr>
+                        <tr>
+                            <td>Operational Carbon</td>
+                            <td>12% reduction</td>
+                        </tr>
+                        <tr>
+                            <td>Job Completion Time</td>
+                            <td>Within 3% of baseline</td>
+                        </tr>
+                        <tr>
+                            <td>Proactive Migration Lead Time</td>
+                            <td>8&ndash;12 minutes before breach</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-laptop-code"></i> Technology Stack</h2>
+                    <table class="tech-table">
+                        <tr><th>AI/ML</th><td>Reinforcement Learning, Proximal Policy Optimization (PPO), Lagrangian Optimization, CMDP</td></tr>
+                        <tr><th>Simulation</th><td>Gymnasium (OpenAI Gym), Digital Twin, Thermal RC Dynamics</td></tr>
+                        <tr><th>Languages</th><td>Python</td></tr>
+                        <tr><th>Data Sources</th><td>Alibaba GPU Cluster Traces, electricityMap (carbon intensity)</td></tr>
+                        <tr><th>Integration</th><td>HPE GreenLake, HPCM, CSM, iLO Redfish API, Modbus/BACnet</td></tr>
+                        <tr><th>Hardware</th><td>NVIDIA A100 GPU (training), heterogeneous cooling zones (air, D2C, immersion)</td></tr>
+                    </table>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-road"></i> Current Status & Next Steps</h2>
+                    <ul>
+                        <li><strong>Completed:</strong> Digital-twin simulator, Lagrangian PPO training pipeline, simulation experiments against all baselines</li>
+                        <li><strong>Packaged:</strong> ThermoRL agent and THI module as standalone Python library ready for DCIM API integration</li>
+                        <li><strong>Next:</strong> Hardware-in-the-loop validation with live CDU telemetry from HPE internal lab</li>
+                        <li><strong>Medium-term:</strong> Federated scheduling across HPE-managed campuses combining thermal and carbon signals</li>
+                        <li><strong>Long-term:</strong> 30-minute digital-twin lookahead predictions aligned with HPE AIOps capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-tags"></i> Technologies & Tools</h2>
+                    <div>
+                        <span class="tag">Reinforcement Learning</span>
+                        <span class="tag">PPO</span>
+                        <span class="tag">Gymnasium</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Digital Twin</span>
+                        <span class="tag">Thermal Management</span>
+                        <span class="tag">Data Center Scheduling</span>
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Carbon Optimization</span>
+                        <span class="tag">CMDP</span>
+                        <span class="tag">HPE GreenLake</span>
+                        <span class="tag">Redfish API</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-muted);">
+                        Internal HPE research prototype, evaluated in simulation; not deployed in production.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

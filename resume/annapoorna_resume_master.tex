@@ -1,0 +1,160 @@
+%-------------------------
+% ATS-Friendly Master Resume - LaTeX
+% Author: Annapoorna S
+% Version: 2.0 | General Purpose
+%-------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-3pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{4pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{2pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Annapoorna S} \\ \vspace{2pt}
+    \small +91-7483893047 $|$
+    \href{mailto:annapoorna.placements@gmail.com}{annapoorna.placements@gmail.com} $|$
+    \href{https://www.linkedin.com/in/annapoorna-s-a18b371a5/}{LinkedIn} $|$
+    \href{https://github.com/annapoorna-s-alt}{GitHub} $|$
+    \href{https://eloquent-cobbler-b0fb87.netlify.app}{Portfolio} $|$
+    Bengaluru, India
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{Systems Software Engineer with 3+ years at Hewlett Packard Enterprise building production-grade backend services and distributed automation for the world's largest HPC and AI clusters. Top 3 open-source contributor to HPE's flagship platform (1,600+ commits). Combines Python, Linux, Docker, Kubernetes, CI/CD, and Kafka with applied AI skills in LLM integration, RAG, and reinforcement learning.}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}{: Python (advanced), C/C++, Java, SQL, Bash/Shell, TypeScript} \\
+    \textbf{AI/ML \& LLM}{: LLM Integration (Llama 3.3, Groq), RAG Pipelines, Reinforcement Learning (PPO, CMDP), Scikit-learn, XGBoost, Pandas, NumPy, Feature Engineering, Gymnasium} \\
+    \textbf{Backend \& Data}{: FastAPI, REST APIs, AsyncIO, Microservices, Distributed Systems, Kafka, PostgreSQL, MySQL} \\
+    \textbf{DevOps \& Monitoring}{: Docker, Kubernetes, Podman, Jenkins, GitHub Actions, RPM Packaging, Artifactory, Git, Grafana, Prometheus} \\
+    \textbf{Practices}{: System Design, TDD (85\%+ coverage), Code Reviews, Open Source, Agile/Scrum, Technical Documentation}
+  }}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Systems Software Engineer 2 -- HPC \& AI}{Feb 2025 -- Present}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Built a Python/FastAPI/AsyncIO \textbf{inventory service} and extended node collection with \textbf{Aruba management-switch collectors and parsers}; unified mixed-target CLI/API selection, collection and query services, and target-based results with corresponding tests}
+        \resumeItem{Owned \textbf{NGSM} CMDB-driven add/delete/modify inventory workflows with asynchronous posting; improved node collection using \textbf{ClusterShell} batching, availability checks, and a PDSH fallback}
+        \resumeItem{Evolved \textbf{HTT} diagnostics with reusable YAML-configured plugins, structured JSON output, and error-specific repair guidance; strengthened \textbf{SAT} automation through firmware-snapshot cleanup fixes and dependency vulnerability remediation}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Systems Software Engineer -- HPC \& AI}{Sep 2023 -- Feb 2025}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Own end-to-end design and delivery of \textbf{System Admin Toolkit (SAT)}, a production CLI platform for boot/shutdown, firmware management, and configuration sync across 10,000+ node exascale clusters; top 3 open-source contributor with 1,600+ commits}
+        \resumeItem{Designed and maintained \textbf{CI/CD pipelines} (Jenkins, GitHub Actions) across 6+ repositories; delivered 4 enterprise releases (HPE CSM v1.6--v1.7) with 85\%+ test coverage through TDD}
+        \resumeItem{Built \textbf{Hardware Triage Tool (HTT)}, an automated diagnostic engine with YAML-based workflows and Redfish API integration; covers 6 failure scenarios across 11 hardware platforms}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {R\&D Software Engineer Intern}{Feb 2023 -- Aug 2023}
+      {Hewlett Packard Enterprise (HPE)}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Built REST API clients, CI/CD pipelines (Jenkins, Git), and automation scripts; ramped up to independent feature delivery within 3 months}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{ThermoRL: RL for Thermal-Aware Workload Scheduling} $|$ \emph{Python, PPO, Gymnasium}}{Research Prototype @ HPE}
+          \resumeItemListStart
+            \resumeItem{Designed reinforcement learning scheduler co-optimizing compute placement across heterogeneous cooling zones (air, D2C, immersion) using Lagrangian-relaxed PPO with constrained MDP formulation; introduced Thermal Headroom Index (THI) as a unified zone-agnostic safety metric}
+            \resumeItem{Achieved \textbf{73\% reduction in thermal violations, 18\% cooling energy savings, 12\% carbon reduction} vs carbon-aware-only baselines in 50 MW AI campus digital-twin simulation}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{SAP O2C Graph Explorer} $|$ \emph{FastAPI, React/TypeScript, PostgreSQL, LLM (Llama 3.3), RAG, Cytoscape.js}}{\href{https://github.com/annapoorna-mygit/SAP-O2C-Graph-Explorer}{GitHub}}
+          \resumeItemListStart
+            \resumeItem{Full-stack AI application ingesting 19 SAP entity types and modeling Order-to-Cash flows as an interactive graph; LLM-powered chat interface with RAG architecture translates natural-language queries into live SQL execution}
+            \resumeItem{Engineered LLM guardrails to constrain responses to dataset-relevant queries; deployed on Vercel + Render + Neon (PostgreSQL) with Docker containerization}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at Austin}{2025 -- 2026}
+      {Post Graduate Program in Data Science \& AI}{GPA: 4.26 / 4.44}
+    \resumeSubheading
+      {JSS Science and Technology University (SJCE)}{2019 -- 2023}
+      {Bachelor of Engineering in Computer Science}{CGPA: 9.25 / 10}
+  \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements \& Leadership}
+ \begin{itemize}[leftmargin=0.15in]
+    \small{
+      \resumeItem{Top-3 finisher in HPE internal Secured Code Tournament (twice); Product Owner for Inventory Service and SAT across 4 production releases; mentor at Nisvartha Foundation}
+    }
+ \end{itemize}
+
+\end{document}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annapoorna S | Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11.5px;
+    color: #222;
+    background: #fff;
+    line-height: 1.4;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px 12px;
+    border-bottom: 2px solid #e8e8e8;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #111;
+    text-transform: uppercase;
+  }
+  .header-left .title {
+    color: #1565C0;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 14px;
+    font-size: 11px;
+    color: #444;
+  }
+  .contact-info a { color: #444; text-decoration: none; }
+  .contact-info span { display: flex; align-items: center; gap: 4px; }
+  .contact-info .icon { color: #1565C0; font-size: 11px; }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #1565C0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+  }
+
+  /* ---- BODY ---- */
+  .body {
+    display: flex;
+    gap: 0;
+    padding: 0 30px 16px;
+  }
+
+  /* LEFT COLUMN */
+  .left-col {
+    flex: 1 1 58%;
+    padding-right: 28px;
+    border-right: 1.5px solid #e8e8e8;
+  }
+
+  /* RIGHT COLUMN */
+  .right-col {
+    flex: 0 0 38%;
+    padding-left: 26px;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section { margin-top: 13px; }
+  .section-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #111;
+    border-bottom: 2px solid #111;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* SUMMARY */
+  .summary p {
+    font-size: 11px;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  /* EXPERIENCE */
+  .job { margin-bottom: 10px; }
+  .job-title { font-size: 12px; font-weight: 700; color: #111; }
+  .job-company { font-size: 11.5px; font-weight: 600; color: #1565C0; margin-top: 1px; }
+  .job-meta {
+    font-size: 10.5px;
+    color: #666;
+    margin: 2px 0 4px;
+    display: flex;
+    gap: 14px;
+  }
+  .job-meta span { display: flex; align-items: center; gap: 3px; }
+  .job-meta .icon { color: #1565C0; }
+  .job ul { padding-left: 13px; }
+  .job ul li {
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 3px;
+    line-height: 1.45;
+  }
+
+  /* PROJECT */
+  .project { margin-bottom: 9px; }
+  .project-title { font-size: 11.5px; font-weight: 700; color: #111; }
+  .project-meta { font-size: 10.5px; color: #1565C0; margin-bottom: 3px; font-style: italic; }
+  .project ul { padding-left: 13px; }
+  .project ul li { font-size: 11px; color: #333; margin-bottom: 2px; line-height: 1.45; }
+
+  /* SKILLS */
+  .skill-category { margin-bottom: 9px; }
+  .skill-category-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #1565C0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #d0e4ff;
+    padding-bottom: 2px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag {
+    background: #f0f0f0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10.5px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  /* EDUCATION */
+  .edu-entry { margin-bottom: 8px; }
+  .edu-degree { font-size: 11.5px; font-weight: 700; color: #111; }
+  .edu-school { font-size: 11px; color: #1565C0; font-weight: 600; }
+  .edu-meta { font-size: 10.5px; color: #666; margin-top: 1px; }
+
+  /* ACHIEVEMENTS */
+  .achievements ul { padding-left: 13px; }
+  .achievements ul li { font-size: 11px; color: #333; margin-bottom: 3px; line-height: 1.45; }
+
+  /* PRINT */
+  @media print {
+    body { font-size: 11px; }
+    .page { max-width: 100%; margin: 0; }
+    .header { padding: 10px 24px 10px; }
+    .body { padding: 0 24px 10px; }
+    .section { margin-top: 10px; }
+    @page { margin: 0.3in; size: A4; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left" style="width:100%; text-align:center;">
+      <h1>Annapoorna S</h1>
+      <div class="title">Systems Software Engineer (HPC &amp; AI)</div>
+      <div class="contact-info" style="justify-content:center;">
+        <span><span class="icon">&#9990;</span> +91-7483893047</span>
+        <span><span class="icon">&#9993;</span> <a href="mailto:annapoorna.placements@gmail.com">annapoorna.placements@gmail.com</a></span>
+        <span><span class="icon">&#128279;</span> <a href="https://eloquent-cobbler-b0fb87.netlify.app" target="_blank">Portfolio</a></span>
+        <span><span class="icon">&#128279;</span> <a href="https://www.linkedin.com/in/annapoorna-s-a18b371a5/" target="_blank">linkedin.com/in/annapoorna-s</a></span>
+        <span><span class="icon">&#128279;</span> <a href="https://github.com/annapoorna-s-alt" target="_blank">github.com/annapoorna-s-alt</a></span>
+        <span><span class="icon">&#128205;</span> Bengaluru, India</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+
+      <!-- SUMMARY -->
+      <div class="section summary">
+        <div class="section-title">Summary</div>
+        <p>Systems Software Engineer with 3+ years of experience designing scalable software solutions for High Performance Computing (HPC) and AI infrastructure at Hewlett Packard Enterprise. Experienced in developing Python-based backend applications, Linux system software, distributed automation frameworks, containerized platforms, and cluster management tools. Proven ability to design production-grade software, optimize system reliability, and deliver scalable solutions across large-scale distributed environments. Strong foundation in machine learning, algorithm development, and mathematical modeling through applied research and data science projects. Passionate about backend engineering, systems programming, and AI-powered infrastructure.</p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="job">
+          <div class="job-title">Systems Software Engineer (HPC &amp; AI)</div>
+          <div class="job-company">Hewlett Packard Enterprise (HPE)</div>
+          <div class="job-meta">
+            <span><span class="icon">&#128197;</span> Sep 2023 – Present</span>
+            <span><span class="icon">&#128205;</span> Bengaluru, India</span>
+          </div>
+          <ul>
+            <li>Built a Python/FastAPI/AsyncIO <strong>inventory service</strong> and extended node collection with <strong>Aruba management-switch collectors and parsers</strong>; unified mixed-target CLI/API selection, collection and query services, and target-based results with corresponding tests</li>
+            <li>Owned <strong>NGSM</strong> CMDB-driven add/delete/modify inventory workflows with asynchronous posting; improved node collection using <strong>ClusterShell</strong> batching, availability checks, and a PDSH fallback</li>
+            <li>Own end-to-end design and delivery of <strong>System Admin Toolkit (SAT)</strong>, a production CLI platform for boot/shutdown, firmware management, and configuration sync across 10,000+ node exascale clusters; top 3 open-source contributor (1,600+ commits)</li>
+            <li>Design and maintain <strong>CI/CD pipelines</strong> (Jenkins, GitHub Actions) across 6+ repositories: automated unit tests, code style enforcement, multi-stage Docker image builds, and artifact publishing to Artifactory</li>
+            <li>Built <strong>Hardware Triage Tool (HTT)</strong> and helped evolve its modular architecture with reusable YAML-configured plugins, Redfish integration, structured JSON output, and repair guidance across EX/XD platforms; strengthened <strong>SAT</strong> automation through firmware-snapshot cleanup fixes and dependency vulnerability remediation</li>
+            <li>Delivered 4 enterprise releases (CSM v1.6–v1.7) with full CI/CD pipeline ownership, API migrations with zero-downtime, retry logic and circuit breakers across 15+ K8s microservices, and 85%+ test coverage through TDD</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-title">R&amp;D Software Engineer Intern</div>
+          <div class="job-company">Hewlett Packard Enterprise (HPE)</div>
+          <div class="job-meta">
+            <span><span class="icon">&#128197;</span> Feb 2023 – Aug 2023</span>
+            <span><span class="icon">&#128205;</span> Bengaluru, India</span>
+          </div>
+          <ul>
+            <li>Built REST API clients, CI/CD pipelines (Jenkins, Git), and automation scripts; utilized Jira for task tracking and ramped up to independent feature delivery within 3 months</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="project">
+          <div class="project-title">ThermoRL: RL for Thermal-Aware Workload Scheduling</div>
+          <div class="project-meta">Python &middot; Reinforcement Learning (PPO) &middot; Gymnasium &middot; Digital Twin &middot; Research @ HPE</div>
+          <ul>
+            <li>Designed RL scheduler across heterogeneous cooling zones (air, D2C, immersion) using Lagrangian-relaxed PPO with constrained MDP; introduced Thermal Headroom Index (THI) as unified zone-agnostic safety metric</li>
+            <li>Achieved <strong>73% fewer thermal violations, 18% cooling energy savings, 12% carbon reduction</strong> vs carbon-aware baselines in 50 MW AI campus simulation</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-title">SAP O2C Graph Explorer</div>
+          <div class="project-meta">FastAPI &middot; React/TypeScript &middot; PostgreSQL &middot; LLM (Llama 3.3) &middot; RAG &middot; Cytoscape.js</div>
+          <ul>
+            <li>Full-stack AI application ingesting 19 SAP entity types and modeling Order-to-Cash flows as an interactive graph; LLM-powered chat with RAG architecture translates natural-language queries into live SQL execution; engineered LLM guardrails for dataset-scoped responses; deployed on cloud infrastructure with Docker containerization</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Predictive Engine Failure Detection</div>
+          <div class="project-meta">Python &middot; XGBoost &middot; Gradient Boosting &middot; Scikit-learn &middot; Feature Engineering</div>
+          <ul>
+            <li>End-to-end ML pipeline on 19,500+ engine records; tuned Gradient Boosting achieved <strong>96.71% Recall</strong> with 80% reduction in missed failures via RandomizedSearchCV and SMOTE</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- end left-col -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Skills</div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Programming</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">C</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash/Shell</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">OOP</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Backend &amp; Data</div>
+          <div class="skill-tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">AsyncIO</span>
+            <span class="tag">Microservices</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Distributed Systems</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Systems</div>
+          <div class="skill-tags">
+            <span class="tag">Linux / RHEL</span>
+            <span class="tag">Redfish API</span>
+            <span class="tag">SSH / pdsh</span>
+            <span class="tag">systemd</span>
+            <span class="tag">Networking Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">DevOps &amp; CI/CD</div>
+          <div class="skill-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Podman</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">RPM Packaging</span>
+            <span class="tag">Artifactory</span>
+            <span class="tag">Git</span>
+            <span class="tag">Makefile</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">AI / ML &amp; LLM</div>
+          <div class="skill-tags">
+            <span class="tag">LLM Integration</span>
+            <span class="tag">RAG Pipelines</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">PPO / CMDP</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Gradient Boosting</span>
+            <span class="tag">Feature Engineering</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Gymnasium</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Monitoring &amp; Observability</div>
+          <div class="skill-tags">
+            <span class="tag">Grafana</span>
+            <span class="tag">Prometheus</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Structured Logging</span>
+            <span class="tag">Automated Alerting</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Practices</div>
+          <div class="skill-tags">
+            <span class="tag">System Design</span>
+            <span class="tag">TDD</span>
+            <span class="tag">Code Reviews</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">Technical Docs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-entry">
+          <div class="edu-degree">Post Graduate Program in Data Science &amp; AI</div>
+          <div class="edu-school">University of Texas at Austin</div>
+          <div class="edu-meta">2025 – 2026 &nbsp;|&nbsp; GPA: 4.26 / 4.44</div>
+          <div style="font-size:11.5px; color:#555; margin-top:3px;">ML, Deep Learning, RL, Feature Engineering, Data Visualization</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-degree">B.E. in Computer Science</div>
+          <div class="edu-school">JSS Science and Technology University (SJCE)</div>
+          <div class="edu-meta">2019 – 2023 &nbsp;|&nbsp; CGPA: 9.25 / 10</div>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS -->
+      <div class="section achievements">
+        <div class="section-title">Achievements</div>
+        <ul>
+          <li>Top-3 in HPE internal <strong>Secured Code Tournament</strong> (twice), demonstrating security-aware engineering</li>
+          <li>Product Owner for Inventory Service &amp; SAT; drove planning and delivery across 4 production releases</li>
+          <li>Mentored junior engineers on system design and distributed systems; led code reviews maintaining 85%+ test coverage</li>
+          <li>Mentor at <strong>Nisvartha Foundation</strong>, guiding students in programming and career development</li>
+        </ul>
+      </div>
+
+    </div><!-- end right-col -->
+
+  </div><!-- end body -->
+</div><!-- end page -->
+</body>
+</html>
